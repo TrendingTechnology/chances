@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+import T from 'prop-types';
 import Bio from '../Bio';
 import './BlogHeader.css';
 
 class BlogHeader extends Component {
+  static propTypes = {
+    title: T.string,
+    subtitle: T.string,
+    timeToRead: T.string,
+    image: T.string,
+    imageAlt: T.string,
+    date: T.string,
+  };
+
   render() {
-    const { title, subtitle, timeToRead, image, date } = this.props;
+    const { title, subtitle, timeToRead, image, imageAlt, date } = this.props;
     return (
       <div
         className={cx('BlogHeader', {
@@ -14,7 +24,7 @@ class BlogHeader extends Component {
       >
         {image && (
           <figure className="BlogHeader__imageWrapper">
-            <img className="BlogHeader__image" src={image} alt="" />
+            <img className="BlogHeader__image" src={image} alt={imageAlt} />
           </figure>
         )}
         <div className="BlogHeader__info">

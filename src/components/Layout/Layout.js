@@ -26,6 +26,7 @@ class Layout extends React.Component {
       subtitle,
       date,
       image,
+      imageAlt,
       timeToRead,
       children,
     } = this.props;
@@ -42,6 +43,7 @@ class Layout extends React.Component {
           timeToRead={timeToRead}
           date={date}
           image={image}
+          imageAlt={imageAlt}
         />
       );
     }

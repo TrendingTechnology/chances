@@ -1,0 +1,64 @@
+.Bio {
+  display: flex;
+  align-items: center;
+
+  &__image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 999px;
+
+    @media screen and (min-width: 40em) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  &__description {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: 0;
+    color: var(--medium-gray);
+    font-family: var(--font-sans);
+    font-size: smaller;
+    @media screen and (min-width: 400px) {
+      font-size: 16px;
+    }
+  }
+
+  &__iconLink {
+    display: flex;
+    align-items: center;
+    fill: currentColor;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      opacity: 0.75;
+    }
+  }
+
+  &__sep {
+    display: inline-block;
+    margin: 0 4px;
+    @media screen and (min-width: 400px) {
+      margin: 0 8px;
+    }
+  }
+
+  &__nameLink {
+    color: var(--black);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

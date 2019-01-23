@@ -1,0 +1,35 @@
+.Layout {
+
+  &__main,
+  &__header,
+  &__footer {
+    max-width: 770px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 24px;
+  }
+
+  &__break {
+    margin: 0;
+    margin-top: 24px;
+    border: 0;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  &__header {
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    &--wide {
+      max-width: 1300px;
+      @media screen and (min-width: 90em) {
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        .Layout__break {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}

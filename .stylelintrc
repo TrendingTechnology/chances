@@ -1,0 +1,6 @@
+{
+  "extends": ["stylelint-config-recommended", "stylelint-config-property-sort-order-smacss"],
+  "rules": {
+    "selector-nested-pattern": "^(&|[a-z]|[.]|>|[+]|~)"
+  }
+}

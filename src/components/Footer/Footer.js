@@ -30,22 +30,27 @@ class Footer extends React.Component {
     return (
       <footer className={cx('Footer', className)}>
         <hr />
-        <nav className="Footer__nav">
-          <ul className="Footer__menu">
-            {items.map(({ href, label }) => (
-              <li className="Footer__menuItem" key={label}>
-                <a
-                  className="Footer__menuLink"
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="Footer__bottom">
+          <nav className="Footer__nav">
+            <ul className="Footer__menu">
+              {items.map(({ href, label }) => (
+                <li className="Footer__menuItem" key={label}>
+                  <a
+                    className="Footer__menuLink"
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <span className="Footer__credit">
+            &copy; {new Date().getFullYear()}. Built with React and Gatsby.js
+          </span>
+        </div>
       </footer>
     );
   }

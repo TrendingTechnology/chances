@@ -1,0 +1,22 @@
+.GithubButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--light-gray);
+  background: var(--dark-gray);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: smaller;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background: var(--black);
+  }
+
+  &__icon {
+    margin-right: 6px;
+    fill: #fff;
+  }
+}

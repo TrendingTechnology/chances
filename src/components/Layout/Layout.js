@@ -5,6 +5,7 @@ import cx from 'classnames';
 import Bio from '../Bio';
 import BlogHeader from '../BlogHeader';
 import Footer from '../Footer';
+import GithubButton from '../GithubButton';
 import { Fonts, webFonts } from '../../utils/fonts';
 import './Layout.css';
 
@@ -57,6 +58,11 @@ class Layout extends React.Component {
         >
           {header}
           <hr className="Layout__break" />
+          <GithubButton
+            className="Layout__forkButton"
+            aria-label="Fork on GitHub"
+            label="Fork"
+          />
         </header>
         <main className="Layout__main">{children}</main>
         <Footer className="Layout__footer" />

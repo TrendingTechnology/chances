@@ -1,5 +1,4 @@
 .Layout {
-
   &__main,
   &__header,
   &__footer {
@@ -30,6 +29,16 @@
           margin-top: 40px;
         }
       }
+    }
+  }
+
+  &__forkButton {
+    position: fixed;
+    z-index: 2;
+    top: 24px;
+    right: 24px;
+    @media screen and (max-width: 39.75em) {
+      display: none;
     }
   }
 }

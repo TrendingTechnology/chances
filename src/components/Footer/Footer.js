@@ -48,7 +48,10 @@ class Footer extends React.Component {
             </ul>
           </nav>
           <span className="Footer__credit">
-            &copy; {new Date().getFullYear()}. Built with React and Gatsby.js. Any visual similarities to other blogging platforms is entirely coincidental.
+            &copy; {new Date().getFullYear()}. Built with React and Gatsby.js.
+            <br />
+            Any visual similarities to other blogging platforms is entirely
+            coincidental.
           </span>
         </div>
       </footer>

@@ -9,9 +9,7 @@
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
     "start": "yarn dev",
-    "build": "rm -rf public && rm -rf .cache && gatsby build",
-    "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) chances.tech",
-    "dry": "yarn build && cp now.json public/ && cd public && now"
+    "build": "rm -rf public && rm -rf .cache && gatsby build"
   },
   "dependencies": {
     "classnames": "^2.2.6",

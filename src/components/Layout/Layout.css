@@ -40,5 +40,9 @@
     @media screen and (max-width: 39.75em) {
       display: none;
     }
+    @media screen and (min-width: 90em) {
+      top: 40px;
+      right: 40px;
+    }
   }
 }

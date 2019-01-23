@@ -13,5 +13,4 @@ Today slipped away from me, it seems, and I almost went to bed before writing. I
 Not knowing is uncomfortable. I hear it’s harder for some than others. As a developer who also struggles with being on the not-knowing side of things, imposter syndrome can be quite strong for me. That’s probably why I like to say to myself and others so frequently that I really don’t know what I’m doing 9 times out of 10. I must take some solace in beating that fact into my psyche as a method for slowly becoming more comfortable with it.
 
 > Only I wasn’t steering anything, not even myself.
-> 
-> <cite>Sylvia Plath, *The Bell Jar*</cite>
+> <cite><span>Sylvia Plath, *The Bell Jar*</span></cite>

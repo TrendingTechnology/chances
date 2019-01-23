@@ -53,7 +53,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-130227707-1`,
+        trackingId: `UA-30462412-1`,
       },
     },
     {
@@ -92,6 +92,7 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.spoiler,
                   image: edge.node.frontmatter.image,
+                  imageAlt: edge.node.frontmatter.imageAlt,
                   date: edge.node.fields.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
@@ -118,6 +119,7 @@ module.exports = {
                         date
                         spoiler
                         image
+                        imageAlt
                       }
                     }
                   }

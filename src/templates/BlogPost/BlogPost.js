@@ -25,6 +25,7 @@ class BlogPost extends Component {
         date={post.frontmatter.date}
         subtitle={post.frontmatter.subtitle}
         image={post.frontmatter.image}
+        imageAlt={post.frontmatter.imageAlt}
         timeToRead={formatReadingTime(post.timeToRead)}
         className="BlogPost"
       >
@@ -123,6 +124,7 @@ export const query = graphql`
         langs
         spoiler
         image
+        imageAlt
       }
       fields {
         slug

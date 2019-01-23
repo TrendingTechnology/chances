@@ -33,7 +33,7 @@ class Footer extends React.Component {
         <nav className="Footer__nav">
           <ul className="Footer__menu">
             {items.map(({ href, label }) => (
-              <li className="Footer__menuItem" key="label">
+              <li className="Footer__menuItem" key={label}>
                 <a
                   className="Footer__menuLink"
                   href={href}

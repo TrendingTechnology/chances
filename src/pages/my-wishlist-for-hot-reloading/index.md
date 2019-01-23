@@ -4,6 +4,8 @@ subtitle: Nibh phasellus dictumst feugiat, aptent cras platea aliquam integer pu
 date: '2019-01-01'
 langs: ['en']
 spoiler: I don't want a lot for Christmas. There is just one thing I need.
+image: ''
+imageAlt: ''
 ---
 
 Do you have a project that you approach repeatedly with a mix of success and failure, step aside for a while, and then try again — year after year? For some, it might be a router or a virtual list scroller. For me, it’s hot reloading.

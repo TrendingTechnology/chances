@@ -5,6 +5,7 @@ date: '2019-01-02'
 langs: ['en']
 spoiler: Dependency injection is nice if you don’t have to think about it.
 image: ''
+imageAlt: ''
 ---
 
 When you call `setState` in a component, what do you think happens?

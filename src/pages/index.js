@@ -52,7 +52,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM D, YYYY")
             title
             spoiler
-            image
           }
         }
       }

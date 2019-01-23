@@ -5,6 +5,7 @@ date: '2019-01-03'
 langs: ['en']
 spoiler: We talk about classes, new, instanceof, prototype chains, and API design.
 image: 'https://picsum.photos/1000/800'
+imageAlt: ''
 ---
 
 Consider this `Greeting` component which is defined as a function:

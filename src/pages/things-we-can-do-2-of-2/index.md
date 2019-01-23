@@ -17,7 +17,7 @@ So what can we as mere humans do to advance the cause of more diversity and equi
 ## Listen first.
 I believe that listening is actually the secret solution to most of life’s problems. One of the biggest recurring themes you may notice from women with gripes about their experiences in tech is that they are often overlooked, interrupted or ignored. Perhaps less nefarious but equally pernicious, men in positions of power may not consult the women on their team before making decisions (big or small) that could have unintended negative consequences for them. Purposely listening and making sure others are able to voice their full opinion before interjecting or dismissing can go a long way.
 
-## Amplify
+## Amplify.
 Also consider: unless you are running the team yourself, you can’t control how others in a group setting may react to a given situation. Pay attention to the people who can’t seem to get a word in during meetings, and try to use your position to boost them if at all possible. [Women in the Obama White House adopted this method of “amplification”](https://www.washingtonpost.com/news/powerpost/wp/2016/09/13/white-house-women-are-now-in-the-room-where-it-happens/?utm_term=.bd7ea508687c) to boost their voices when they felt ignored or overlooked by men in the room.
 
 ## Talk about it.

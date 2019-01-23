@@ -127,6 +127,7 @@ blockquote cite {
       background-color: transparent;
       background-image: linear-gradient(to bottom, var(--green), var(--green));
       mix-blend-mode: multiply;
+      pointer-events: none;
     }
   }
 }

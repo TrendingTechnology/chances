@@ -35,7 +35,7 @@ class BlogPost extends Component {
           description={post.frontmatter.spoiler}
           slug={post.fields.slug}
         />
-        <div
+        <article
           dangerouslySetInnerHTML={{ __html: post.html }}
           className="BlogPost__mainContent"
         />
@@ -63,7 +63,9 @@ class BlogPost extends Component {
             </li>
           </ul>
         </nav>
-        <Bio nameLink="/" />
+        <aside>
+          <Bio nameLink="/" />
+        </aside>
         <nav className="BlogPost__postNav">
           <ul className="BlogPost__postNavMenu">
             <li

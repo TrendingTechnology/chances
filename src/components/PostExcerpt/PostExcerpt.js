@@ -23,7 +23,7 @@ class PostExcerpt extends Component {
           dangerouslySetInnerHTML={{ __html: spoiler }}
         />
         <small className="PostExcerpt__more">
-          <Link className="PostExcerpt__moreLink" to={slug}>
+          <Link className="PostExcerpt__moreLink" to={slug} rel="bookmark">
             Read More
           </Link>
         </small>

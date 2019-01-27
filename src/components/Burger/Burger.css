@@ -22,7 +22,7 @@
   /* stylelint-disable no-descending-specificity */
   &__line {
     display: block;
-    width: var(--burger-width);
+    width: 100%;
     height: var(--burger-line-thickness);
     margin: var(--burger-line-margin) auto;
     transition: transform 0.3s ease-in-out,

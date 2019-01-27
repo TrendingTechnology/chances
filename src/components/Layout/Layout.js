@@ -62,7 +62,6 @@ class Layout extends React.Component {
     return (
       <Consumer>
         {({ darkMode, toggleDarkMode }) => {
-          console.log({ darkMode });
           return (
             <div className={cx('Layout', className)}>
               <Helmet bodyAttributes={{ class: cx({ darkMode }) }}>

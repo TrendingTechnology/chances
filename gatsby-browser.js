@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider, Consumer } from './src/components/Context';
+import 'what-input';
 import './src/utils/theme.css';
 
 export const wrapRootElement = ({ element }) => {

@@ -33,7 +33,7 @@
     background-color: var(--light-gray);
 
     .Toggle--checked & {
-      background-color: var(--black);
+      background-color: var(--green);
     }
   }
 

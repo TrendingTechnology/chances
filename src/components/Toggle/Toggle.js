@@ -115,11 +115,14 @@ class Toggle extends PureComponent {
 
   render() {
     const { className, label, ...inputProps } = this.props;
-    console.log({ toggleChecked: this.state.checked });
+    const checked =
+      typeof this.props.checked !== 'undefined'
+        ? this.props.checked
+        : this.state.checked;
     return (
       <div
         className={cx('Toggle', className, {
-          'Toggle--checked': this.state.checked,
+          'Toggle--checked': checked,
           'Toggle--focus': this.state.hasFocus,
           'Toggle--disabled': this.props.disabled,
         })}

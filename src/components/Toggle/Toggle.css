@@ -39,8 +39,8 @@
 
   &__trackCheck {
     position: absolute;
-    top: 0px;
-    bottom: 0px;
+    top: 0;
+    bottom: 0;
     left: 5px;
     width: 17px;
     height: 17px;
@@ -58,9 +58,9 @@
 
   &__trackX {
     position: absolute;
-    top: 0px;
+    top: 0;
     right: 5px;
-    bottom: 0px;
+    bottom: 0;
     width: 17px;
     height: 17px;
     margin-top: auto;
@@ -87,7 +87,7 @@
     background-color: var(--xxlight-gray);
 
     .Toggle--focus & {
-      box-shadow: 0px 0px 2px 3px rgb(255, 167, 196);
+      box-shadow: 0 0 2px 3px rgb(255, 167, 196);
     }
 
     .Toggle--checked & {
@@ -96,7 +96,8 @@
     }
 
     .Toggle:active & {
-      box-shadow: 0px 0px 5px 5px rgb(255, 167, 196);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      box-shadow: transparent;
     }
   }
 }

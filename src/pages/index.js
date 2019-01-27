@@ -18,6 +18,7 @@ class BlogIndex extends Component {
         <SEO />
         {posts.map(({ node }) => (
           <PostExcerpt
+            key={node.fields.slug}
             title={get(node, 'frontmatter.title') || node.fields.slug}
             slug={node.fields.slug}
             date={node.frontmatter.date}

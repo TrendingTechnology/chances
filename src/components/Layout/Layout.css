@@ -32,17 +32,25 @@
     }
   }
 
-  &__forkButton {
+  &__fixed {
+    display: flex;
     position: fixed;
     z-index: 2;
     top: 24px;
     right: 24px;
-    @media screen and (max-width: 39.75em) {
-      display: none;
-    }
     @media screen and (min-width: 90em) {
       top: 40px;
       right: 40px;
     }
+  }
+
+  &__forkButton {
+    @media screen and (max-width: 39.75em) {
+      display: none;
+    }
+  }
+
+  &__darkModeToggle {
+
   }
 }

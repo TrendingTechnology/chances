@@ -3,10 +3,14 @@ const Context = React.createContext();
 
 export class Provider extends Component {
   state = {
-    darkMode: false,
+    darkMode: localStorage.getItem('theme') === 'dark' ? true : false,
   };
 
-  toggleDarkMode = () => this.setState(state => ({ darkMode: !state.darkMode }));
+  toggleDarkMode = () =>
+    this.setState(state => {
+      localStorage.setItem('theme', state.darkMode ? 'light' : 'dark');
+      return { darkMode: !state.darkMode };
+    });
 
   render() {
     return (

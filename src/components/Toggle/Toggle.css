@@ -87,7 +87,7 @@
     background-color: var(--xxlight-gray);
 
     .Toggle--focus & {
-      box-shadow: 0 0 2px 3px rgb(255, 167, 196);
+      box-shadow: 0 0 2px 3px var(--green);
     }
 
     .Toggle--checked & {

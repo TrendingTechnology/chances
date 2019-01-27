@@ -33,16 +33,6 @@
     }
   }
 
-  &__headerBio {
-    margin-right: 52px;
-    @media screen and (min-width: 40em) {
-      margin-right: 132px;
-    }
-    @media screen and (min-width: 64em) {
-      margin-right: 0;
-    }
-  }
-
   &__fixed {
     display: flex;
     position: fixed;

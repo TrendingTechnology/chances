@@ -4,6 +4,7 @@ import { uniq } from 'lodash';
 import cx from 'classnames';
 import { Consumer } from '../Context';
 import Bio from '../Bio';
+import HomeHeader from '../HomeHeader';
 import Burger from '../Burger';
 import BlogHeader from '../BlogHeader';
 import Footer from '../Footer';
@@ -46,7 +47,7 @@ class Layout extends React.Component {
     let header;
 
     if (location.pathname === rootPath) {
-      header = <Bio className="Layout__headerBio" headingEl="h1" />;
+      header = <HomeHeader className="Layout__homeHeader" />;
     } else {
       header = (
         <BlogHeader

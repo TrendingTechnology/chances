@@ -1,8 +1,4 @@
-/*
- * Copyright (c) 2015 instructure-react
- * Forked from https://github.com/aaronshaf/react-toggle/
- * + applied https://github.com/aaronshaf/react-toggle/pull/90
- **/
+// Forked from https://github.com/aaronshaf/react-toggle/
 import React, { PureComponent } from 'react';
 import cx from 'classnames';
 import './Toggle.css';
@@ -19,37 +15,26 @@ class Toggle extends PureComponent {
     }
   }
 
-  handleClick = event => {
+  handleClick = e => {
     const checkbox = this.input;
-    if (event.target !== checkbox && !this.moved) {
-      event.preventDefault();
+    if (e.target !== checkbox) {
+      e.preventDefault();
       checkbox.focus();
       checkbox.click();
       return;
     }
-
     this.setState({ checked: checkbox.checked });
   };
 
   handleFocus = event => {
     const { onFocus } = this.props;
-
-    if (onFocus) {
-      onFocus(event);
-    }
-
-    this.hadFocusAtTouchStart = true;
+    if (onFocus) onFocus(event);
     this.setState({ hasFocus: true });
   };
 
   handleBlur = event => {
     const { onBlur } = this.props;
-
-    if (onBlur) {
-      onBlur(event);
-    }
-
-    this.hadFocusAtTouchStart = false;
+    if (onBlur) onBlur(event);
     this.setState({ hasFocus: false });
   };
 
@@ -67,7 +52,6 @@ class Toggle extends PureComponent {
       >
         <div className="Toggle__track" />
         <div className="Toggle__thumb" />
-
         <input
           {...inputProps}
           ref={ref => {

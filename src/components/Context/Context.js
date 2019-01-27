@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import { noop } from 'lodash';
 const Context = React.createContext();
+
+const localStorage = window
+  ? window.localStorage
+  : { getItem: noop, setItem: noop };
 
 export class Provider extends Component {
   state = {

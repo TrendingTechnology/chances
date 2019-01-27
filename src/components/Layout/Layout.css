@@ -32,10 +32,19 @@
     }
   }
 
+  &__headerBio {
+    margin-right: 52px;
+    @media screen and (min-width: 40em) {
+      margin-right: 132px;
+    }
+    @media screen and (min-width: 64em) {
+      margin-right: 0;
+    }
+  }
+
   &__fixed {
     display: flex;
     position: fixed;
-    z-index: 2;
     top: 24px;
     right: 24px;
     @media screen and (min-width: 90em) {
@@ -51,11 +60,29 @@
     }
   }
 
-  &__darkModeToggle {
-
+  &__darkModeLabel {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   &__burger {
+    z-index: 10;
+  }
 
+  &__menuWrapper {
+    top: -24px;
+    right: -24px;
+    padding-right: 80px;
+    @media screen and (min-width: 90em) {
+      top: -40px;
+      right: -40px;
+      padding-right: 104px;
+    }
   }
 }

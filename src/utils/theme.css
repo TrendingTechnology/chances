@@ -53,6 +53,11 @@ input {
   -webkit-tap-highlight-color: transparent;
 }
 
+[data-whatintent='touch'] *:focus,
+[data-whatintent='mouse'] *:focus {
+  outline: none;
+}
+
 h1,
 h2,
 h3,

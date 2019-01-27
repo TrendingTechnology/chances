@@ -27,12 +27,20 @@
     height: calc(var(--toggle-height) + 2px);
     padding: 0;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-    border: 1px solid var(--black);
+    border: 2px solid var(--black);
     border-radius: calc(var(--toggle-height) / 2 + 1px);
-    background-color: var(--black);
+    background-color: var(--light-gray);
+
+    .Toggle--checked & {
+      background-color: var(--black);
+    }
 
     .darkMode & {
       border-color: #fff;
+      background-color: var(--black);
+    }
+
+    .darkMode .Toggle--checked & {
       background-color: #fff;
     }
   }

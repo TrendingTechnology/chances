@@ -8,7 +8,7 @@ class Confirm extends Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title');
     return (
       <Layout location={this.props.location} title={siteTitle}>
-      <h1>404: Not Found</h1>
+        <h1>404: Not Found</h1>
         <h1>Just one more thing...</h1>
         <p>
           Thank you for subscribing. You will need to check your inbox and

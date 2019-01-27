@@ -8,6 +8,7 @@ import Burger from '../Burger';
 import BlogHeader from '../BlogHeader';
 import Footer from '../Footer';
 import GithubButton from '../GithubButton';
+import SidePanel from '../SidePanel';
 import Toggle from '../Toggle';
 import { Fonts, webFonts } from '../../utils/fonts';
 import './Layout.css';
@@ -45,7 +46,7 @@ class Layout extends React.Component {
     let header;
 
     if (location.pathname === rootPath) {
-      header = <Bio headingEl="h1" />;
+      header = <Bio className="Layout__headerBio" headingEl="h1" />;
     } else {
       header = (
         <BlogHeader
@@ -78,17 +79,29 @@ class Layout extends React.Component {
                   aria-label="Fork on GitHub"
                   label="Fork"
                 />
-                {/* <Toggle
-                  className="Layout__darkModeToggle"
-                  checked={darkMode}
-                  onChange={toggleDarkMode}
-                  label="Toggle between dark and light mode"
-                /> */}
                 <Burger
                   className="Layout__burger"
                   onClick={this.toggleMenu}
                   isActive={this.state.menuIsActive}
                 />
+                <SidePanel
+                  className="Layout__menuWrapper"
+                  isActive={this.state.menuIsActive}
+                >
+                  <label
+                    htmlFor="darkModeToggle"
+                    className="Layout__darkModeLabel"
+                  >
+                    Dark Mode
+                  </label>
+                  <Toggle
+                    id="darkModeToggle"
+                    className="Layout__darkModeToggle"
+                    checked={darkMode}
+                    onChange={toggleDarkMode}
+                    label="Toggle between dark and light mode"
+                  />
+                </SidePanel>
               </div>
             </header>
             <main className="Layout__main">{children}</main>

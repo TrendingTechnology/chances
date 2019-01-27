@@ -1,14 +1,30 @@
 .Burger {
-  --burger-width: 30px;
+  --burger-box-size: 40px;
+  --burger-width: 20px;
   --burger-line-thickness: 2px;
-  --burger-line-margin: 13px;
-  display: block;
-  padding: 0;
-  border: 0;
-  background: transparent;
+  --burger-line-margin: 6px;
+  width: var(--burger-box-size);
+  height: var(--burger-box-size);
+  padding: 0 calc((var(--burger-box-size) - var(--burger-width)) / 2);
+  transition: 0.2s all ease-in;
+  border: 1px solid var(--light-gray);
+  background: #fff;
   appearance: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
+
+  .darkMode & {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: var(--black);
+  }
+
+  &:focus,
+  &--active {
+    border-color: var(--medium-gray);
+    .darkMode & {
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+  }
 
   /* stylelint-disable no-descending-specificity */
   &__line {
@@ -18,6 +34,10 @@
     margin: var(--burger-line-margin) auto;
     transition: all 0.3s ease-in-out;
     background-color: var(--black);
+
+    .darkMode & {
+      background: #fff;
+    }
 
     &:nth-child(1) {
       margin-top: 0;

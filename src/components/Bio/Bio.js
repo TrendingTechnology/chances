@@ -34,7 +34,7 @@ class Bio extends Component {
     const sep = <span className="Bio__sep">·</span>;
     const description = compact([
       date,
-      timeToRead || `Advocate for the web and for people`,
+      timeToRead || `Tech, leadership and people`,
     ]).map((e, i, a) => (
       <React.Fragment key={e}>
         {e} {sep}

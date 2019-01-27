@@ -1,6 +1,7 @@
 .PostExcerpt {
   margin-bottom: 24px;
   /* padding: 20px 20px 24px;
+  transition: var(--transition-speed) border-color var(--transition-func);
   border: 1px solid var(--xlight-gray);
   border-radius: 5px;
   box-shadow: 0 1px 4px var(--xlight-gray); */
@@ -10,6 +11,7 @@
 
   &:not(:last-of-type) {
     padding-bottom: 24px;
+    transition: var(--transition-speed) border-color var(--transition-func);
     border-bottom: 1px solid var(--light-gray);
     @media screen and (min-width: 40em) {
       padding-bottom: 40px;

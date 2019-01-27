@@ -139,7 +139,7 @@ module.exports = {
         short_name: `Chances`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#ffa7c4`,
+        theme_color: `#33c800`,
         display: `minimal-ui`,
         icon: `src/assets/icon.png`,
       },

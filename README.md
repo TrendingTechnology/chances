@@ -8,9 +8,9 @@ To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
 - [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog).
 
 ## Todos
-- [ ] Update all blog posts
+- [x] Update all blog posts
 - [ ] Live search
-- [ ] Dark mode toggle
+- [x] Dark mode toggle
 - [ ] Share buttons
 - [ ] .md > .mdx
 - [ ] 404 template

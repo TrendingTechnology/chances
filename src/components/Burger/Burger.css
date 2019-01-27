@@ -6,24 +6,17 @@
   width: var(--burger-box-size);
   height: var(--burger-box-size);
   padding: 0 calc((var(--burger-box-size) - var(--burger-width)) / 2);
-  transition: 0.2s all ease-in;
+  transition: var(--transition-speed) background-color var(--transition-func),
+    var(--transition-speed) border-color var(--transition-func);
   border: 1px solid var(--light-gray);
-  background: #fff;
+  background-color: var(--white);
   appearance: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 
-  .darkMode & {
-    border-color: rgba(255, 255, 255, 0.25);
-    background: var(--black);
-  }
-
   &:focus,
   &--active {
     border-color: var(--medium-gray);
-    .darkMode & {
-      border-color: rgba(255, 255, 255, 0.5);
-    }
   }
 
   /* stylelint-disable no-descending-specificity */
@@ -32,12 +25,9 @@
     width: var(--burger-width);
     height: var(--burger-line-thickness);
     margin: var(--burger-line-margin) auto;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out,
+      var(--transition-speed) background-color var(--transition-func);
     background-color: var(--black);
-
-    .darkMode & {
-      background: #fff;
-    }
 
     &:nth-child(1) {
       margin-top: 0;

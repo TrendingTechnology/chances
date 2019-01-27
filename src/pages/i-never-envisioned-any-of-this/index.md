@@ -1,7 +1,7 @@
 ---
 title: I never envisioned any of this
 subtitle: ''
-date: '2018-04-06'
+date: '2018-04-07'
 langs: ['en']
 spoiler: Some musings about planning and not planning.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215581/chance.tech/images/bryan-goff-360297-unsplash-1024x683.jpg'

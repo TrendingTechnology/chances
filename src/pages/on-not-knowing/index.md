@@ -1,5 +1,5 @@
 ---
-title: On Not Knowing
+title: On not knowing
 subtitle: Not knowing is uncomfortable. I hear it’s harder for some than others.
 date: '2018-04-06'
 langs: ['en']

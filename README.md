@@ -9,7 +9,7 @@ To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
 
 ## Todos
 - [x] Update all blog posts
-- [ ] Live search
+- [x] Live search
 - [x] Dark mode toggle
 - [ ] Share buttons
 - [ ] .md > .mdx

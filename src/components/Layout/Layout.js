@@ -42,12 +42,18 @@ class Layout extends React.Component {
       imageAlt,
       timeToRead,
       children,
+      handleSearchChange,
     } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`; // eslint-disable-line
     let header;
 
     if (location.pathname === rootPath) {
-      header = <HomeHeader className="Layout__homeHeader" />;
+      header = (
+        <HomeHeader
+          className="Layout__homeHeader"
+          handleSearchChange={handleSearchChange}
+        />
+      );
     } else {
       header = (
         <BlogHeader

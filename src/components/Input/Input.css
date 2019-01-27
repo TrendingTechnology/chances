@@ -1,0 +1,61 @@
+.Input {
+  display: block;
+  position: relative;
+  font-family: var(--font-serif);
+
+  &__field {
+    display: block;
+    appearance: none;
+    width: 100%;
+    padding: 3px 8px 5px;
+    transition: var(--transition-speed) all var(--transition-func);
+    border: 1px solid var(--light-gray);
+    background-color: var(--white);
+    color: var(--black);
+    font-family: var(--font-serif);
+    font-size: 14px;
+
+    @media screen and (min-width: 40em) {
+      font-size: 16px;
+    }
+
+    &:focus {
+      border-color: var(--medium-gray);
+    }
+
+    &--error {
+      border-color: var(--red);
+    }
+
+    &::placeholder {
+      transition: var(--transition-speed) color var(--transition-func);
+      color: var(--medium-gray);
+    }
+  }
+
+  &__errors {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 2px;
+    opacity: 0.7;
+    color: var(--red);
+    font-family: var(--font-sans);
+    font-size: rem(10);
+    letter-spacing: 1px;
+  }
+
+  &__label {
+    font-family: var(--font-sans);
+
+    &--hide {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      border: 0;
+    }
+  }
+}

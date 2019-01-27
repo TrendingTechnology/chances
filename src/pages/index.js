@@ -1,31 +1,67 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
-import { get } from 'lodash';
+import { get, lowerCase } from 'lodash';
+import cx from 'classnames';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import PostExcerpt from '../components/PostExcerpt';
 import { formatReadingTime } from '../utils/helpers';
+import stripTags from 'striptags';
 
 class BlogIndex extends Component {
+  state = {
+    searchValue: '',
+  };
+
+  handleSearchChange = e => {
+    this.setState(state => {
+      const searchValue = lowerCase(e.target.value);
+      if (state.searchValue !== searchValue) {
+        return { searchValue };
+      }
+    });
+  };
+
   render() {
+    const { searchValue } = this.state;
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const posts = get(this, 'props.data.allMarkdownRemark.edges').filter(
-      ({ node }) => node.fields.langKey === 'en'
+      ({ node }) => {
+        const postTitle = get(node, 'frontmatter.title') || node.fields.slug;
+        const postContent = get(node, 'html') || '';
+        const searchTitle = lowerCase(postTitle);
+        const searchContent = lowerCase(stripTags(postContent));
+        const match =
+          searchValue &&
+          (searchContent.includes(searchValue) ||
+            searchTitle.includes(searchValue));
+        return (!searchValue || match) && node.fields.langKey === 'en';
+      }
     );
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout
+        location={this.props.location}
+        title={siteTitle}
+        handleSearchChange={this.handleSearchChange}
+      >
         <SEO />
-        {posts.map(({ node }) => (
-          <PostExcerpt
-            key={node.fields.slug}
-            title={get(node, 'frontmatter.title') || node.fields.slug}
-            slug={node.fields.slug}
-            date={node.frontmatter.date}
-            timeToRead={formatReadingTime(node.timeToRead)}
-            spoiler={node.frontmatter.spoiler}
-          />
-        ))}
+        {posts.length > 0 ? (
+          posts.map(({ node }) => {
+            return (
+              <PostExcerpt
+                key={node.fields.slug}
+                title={get(node, 'frontmatter.title') || node.fields.slug}
+                slug={node.fields.slug}
+                date={node.frontmatter.date}
+                timeToRead={formatReadingTime(node.timeToRead)}
+                spoiler={node.frontmatter.spoiler}
+              />
+            );
+          })
+        ) : (
+          <p>No posts found.</p>
+        )}
       </Layout>
     );
   }
@@ -49,6 +85,7 @@ export const pageQuery = graphql`
             langKey
           }
           timeToRead
+          html
           frontmatter {
             date(formatString: "MMMM D, YYYY")
             title

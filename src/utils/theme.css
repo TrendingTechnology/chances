@@ -10,6 +10,7 @@
   --font-sans: 'ivystyle-sans', sans-serif;
   --font-serif: 'ivyjournal', sans-serif;
   --font-mono: 'ibm-plex-mono', Consolas, Menlo, Monaco, Courier New, monospace;
+  --red: #dc5c3a;
   --green: #33c800;
   --transition-speed: 0.2s;
   --transition-func: ease-in;

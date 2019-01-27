@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
+import cx from 'classnames';
 import './PostExcerpt.css';
 
 class PostExcerpt extends Component {
   render() {
-    const { title, slug, date, timeToRead, spoiler } = this.props;
+    const { className, title, slug, date, timeToRead, spoiler } = this.props;
     return (
-      <article className="PostExcerpt">
+      <article className={cx('PostExcerpt', className)}>
         <header className="PostExcerpt__header">
           <h3 className="PostExcerpt__title">
             <Link className="PostExcerpt__titleLink" to={slug}>

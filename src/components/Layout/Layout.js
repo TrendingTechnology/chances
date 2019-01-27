@@ -4,6 +4,7 @@ import { uniq } from 'lodash';
 import cx from 'classnames';
 import { Consumer } from '../Context';
 import Bio from '../Bio';
+import Burger from '../Burger';
 import BlogHeader from '../BlogHeader';
 import Footer from '../Footer';
 import GithubButton from '../GithubButton';
@@ -15,6 +16,13 @@ class Layout extends React.Component {
   async componentDidMount() {
     await Fonts();
   }
+
+  state = {
+    menuIsActive: false,
+  };
+
+  toggleMenu = () =>
+    this.setState(state => ({ menuIsActive: !state.menuIsActive }));
 
   renderFontLinks = () =>
     uniq(Object.values(webFonts)).map(val => (
@@ -70,11 +78,16 @@ class Layout extends React.Component {
                   aria-label="Fork on GitHub"
                   label="Fork"
                 />
-                <Toggle
+                {/* <Toggle
                   className="Layout__darkModeToggle"
                   checked={darkMode}
                   onChange={toggleDarkMode}
                   label="Toggle between dark and light mode"
+                /> */}
+                <Burger
+                  className="Layout__burger"
+                  onClick={this.toggleMenu}
+                  isActive={this.state.menuIsActive}
                 />
               </div>
             </header>

@@ -45,12 +45,17 @@
   }
 
   &__forkButton {
+    margin-right: 10px;
     @media screen and (max-width: 39.75em) {
       display: none;
     }
   }
 
   &__darkModeToggle {
+
+  }
+
+  &__burger {
 
   }
 }

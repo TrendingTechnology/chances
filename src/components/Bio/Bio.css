@@ -17,7 +17,7 @@
   &__heading {
     margin: 0;
     font-size: 1rem;
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 40em) {
       font-size: 1.2rem;
     }
   }
@@ -27,7 +27,7 @@
     color: var(--medium-gray);
     font-family: var(--font-sans);
     font-size: smaller;
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 40em) {
       font-size: 16px;
     }
   }
@@ -51,6 +51,13 @@
     margin: 0 4px;
     @media screen and (min-width: 400px) {
       margin: 0 8px;
+    }
+  }
+
+  &__twitterIcon {
+    @media screen and (max-width: 39.75em) {
+      width: 18px;
+      height: 18px;
     }
   }
 

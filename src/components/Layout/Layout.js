@@ -61,53 +61,57 @@ class Layout extends React.Component {
     }
     return (
       <Consumer>
-        {({ darkMode, toggleDarkMode }) => (
-          <div className={cx('Layout', className)}>
-            <Helmet bodyAttributes={{ class: cx({ darkMode }) }}>
-              {this.renderFontLinks()}
-            </Helmet>
-            <header
-              className={cx(`Layout__header`, {
-                'Layout__header--wide': location.pathname !== rootPath && image,
-              })}
-            >
-              {header}
-              <hr className="Layout__break" />
-              <div className="Layout__fixed">
-                <GithubButton
-                  className="Layout__forkButton"
-                  aria-label="Fork on GitHub"
-                  label="Fork"
-                />
-                <Burger
-                  className="Layout__burger"
-                  onClick={this.toggleMenu}
-                  isActive={this.state.menuIsActive}
-                />
-                <SidePanel
-                  className="Layout__menuWrapper"
-                  isActive={this.state.menuIsActive}
-                >
-                  <label
-                    htmlFor="darkModeToggle"
-                    className="Layout__darkModeLabel"
-                  >
-                    Dark Mode
-                  </label>
-                  <Toggle
-                    id="darkModeToggle"
-                    className="Layout__darkModeToggle"
-                    checked={darkMode}
-                    onChange={toggleDarkMode}
-                    label="Toggle between dark and light mode"
+        {({ darkMode, toggleDarkMode }) => {
+          console.log({ darkMode });
+          return (
+            <div className={cx('Layout', className)}>
+              <Helmet bodyAttributes={{ class: cx({ darkMode }) }}>
+                {this.renderFontLinks()}
+              </Helmet>
+              <header
+                className={cx(`Layout__header`, {
+                  'Layout__header--wide':
+                    location.pathname !== rootPath && image,
+                })}
+              >
+                {header}
+                <hr className="Layout__break" />
+                <div className="Layout__fixed">
+                  <GithubButton
+                    className="Layout__forkButton"
+                    aria-label="Fork on GitHub"
+                    label="Fork"
                   />
-                </SidePanel>
-              </div>
-            </header>
-            <main className="Layout__main">{children}</main>
-            <Footer className="Layout__footer" />
-          </div>
-        )}
+                  <Burger
+                    className="Layout__burger"
+                    onClick={this.toggleMenu}
+                    isActive={this.state.menuIsActive}
+                  />
+                  <SidePanel
+                    className="Layout__menuWrapper"
+                    isActive={this.state.menuIsActive}
+                  >
+                    <label
+                      htmlFor="darkModeToggle"
+                      className="Layout__darkModeLabel"
+                    >
+                      Dark Mode
+                    </label>
+                    <Toggle
+                      id="darkModeToggle"
+                      className="Layout__darkModeToggle"
+                      checked={darkMode}
+                      onChange={toggleDarkMode}
+                      label="Toggle between dark and light mode"
+                    />
+                  </SidePanel>
+                </div>
+              </header>
+              <main className="Layout__main">{children}</main>
+              <Footer className="Layout__footer" />
+            </div>
+          );
+        }}
       </Consumer>
     );
   }

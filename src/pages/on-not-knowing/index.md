@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: Not knowing is uncomfortable. I hear it’s harder for some than others.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215582/chance.tech/images/ian-froome-362124-unsplash-1024x683.jpg'
 imageAlt: 'A mountaintop peaking through the clouds'
+tags: ['short thoughts', 'uncertainty']
 ---
 
 Today slipped away from me, it seems, and I almost went to bed before writing. I’m feeling it. Not surprising, really. As with anything else, when you are trying to make a lifestyle change and form a new habit, the first week is always the toughest to get through.

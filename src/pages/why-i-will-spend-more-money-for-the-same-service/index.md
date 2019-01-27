@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: When the choice is between time and money, sometimes the answer is experience.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215581/chance.tech/images/chad-kirchoff-202730-unsplash-1024x576.jpg'
 imageAlt: 'Stylized photo of a car engine'
+tags: ['growth', 'business']
 ---
 
 When I’m grocery shopping, I often find myself looking at shelves of various name-brand products priced significantly higher than their generic counterparts wondering why anyone would spend more for what is essentially the same product. Of course there are plenty of good psychological explanations for this that aren’t that difficult to understand, but this got me thinking about the things that I spend money on regularly that I know I can get cheaper elsewhere.

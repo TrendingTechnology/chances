@@ -29,12 +29,15 @@ class BlogIndex extends Component {
       ({ node }) => {
         const postTitle = get(node, 'frontmatter.title') || node.fields.slug;
         const postContent = get(node, 'html') || '';
+        const tags = get(node, 'frontmatter.tags') || [];
         const searchTitle = lowerCase(postTitle);
         const searchContent = lowerCase(stripTags(postContent));
+        const searchTags = tags.map(tag => lowerCase(tag)).join(' ');
         const match =
           searchValue &&
           (searchContent.includes(searchValue) ||
-            searchTitle.includes(searchValue));
+            searchTitle.includes(searchValue) ||
+            searchTags.includes(searchValue));
         return (!searchValue || match) && node.fields.langKey === 'en';
       }
     );
@@ -60,7 +63,12 @@ class BlogIndex extends Component {
             );
           })
         ) : (
-          <p>No posts found.</p>
+          <p className="Layout__noPosts">
+            No posts found.{' '}
+            <span role="img" aria-label="Crying sad face">
+              😢
+            </span>
+          </p>
         )}
       </Layout>
     );
@@ -90,6 +98,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM D, YYYY")
             title
             spoiler
+            tags
           }
         }
       }

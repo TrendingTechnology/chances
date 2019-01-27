@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: If you can't see through to the other side of a challenge, it's time to ask yourself tougher questions.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215582/chance.tech/images/rahul-bhosale-506664-unsplash-1024x683.jpg'
 imageAlt: 'A camper looking into the night sky with a headlamp pointed upwards.'
+tags: ['life', 'growth', 'learning']
 ---
 
 What is it that motivates a person to get up day in and day out, to put in the time and energy it takes to create a life worth living? All of us are unique in many ways. Some would answer the question by pointing to their family. Others might wake up in the morning motivated by a sense of civic duty. Many of us think of this question through the lens of our careers. Yet what all of these distinctions have in common, if we are to succeed in our journeys, is a vision.

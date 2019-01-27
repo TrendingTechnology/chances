@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: Hiring is hard; hiring well is harder. Hiring inclusively is crucial.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215581/chance.tech/images/corey-agopian-257152-unsplash-1024x684.jpg'
 imageAlt: 'Overhead image of people riding a crowded subway train'
+tags: ['accessibility', 'blog', 'diversity', 'do better', 'growth', 'learning']
 ---
 
 I have wanted to write about diversity in the tech space for quite some time. A few things have stopped me, I suppose. The first block that comes to mind is the fact that I am not personally representative of the concept. No one *needs* to tell me that we don’t *need* another white straight man who writes code and attends conferences, yet here I am.

@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: Some musings about planning and not planning.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215581/chance.tech/images/bryan-goff-360297-unsplash-1024x683.jpg'
 imageAlt: 'Photo of the cosmos in all of its randomness'
+tags: ['blog', 'careers', 'growth', 'learning', 'musings', 'uncertainty']
 ---
 
 When folks traditionally think of people in successful positions, they often consider traditional “successful” employment models/titles — doctor, lawyer, engineer, to name just a few. I always assumed that to be successful you had to have some sort of strategy laid out for your life, starting in middle school, and you hit these milestones along the way that move you closer and closer to that success column. And because I never had any of that, I always thought (and still fear, if I’m honest) that success, whatever that means, is a lost cause at this point in my life.

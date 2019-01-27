@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: If presented a choice, one always has more than two options. If they don't appear on the surface, dig deeper.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215581/chance.tech/images/chris-schog-271197-unsplash-1024x725.jpg'
 imageAlt: 'An illuminated tent alone in the woods at night'
+tags: ['challenge', 'growth', 'learning', 'public speaking']
 ---
 
 As I start to dip my toes into the water of public speaking, I can’t help but smile when I consider my experience thus far. It’s something I haven’t done much of in years, but once upon a time I thought I was actually pretty good at it.

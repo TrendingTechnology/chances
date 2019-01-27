@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: If you’re going to have to make a decision, try to make sure it’s between a good choice and a great choice.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215582/chance.tech/images/justin-luebke-43531-unsplash-1024x683.jpg'
 imageAlt: 'A person looking over a horseshoe shaped bend in the road from above.'
+tags: ['life', 'growth', 'learning']
 ---
 
 If you’re going to have to make a decision, try to make sure it’s between a good choice and a great choice.

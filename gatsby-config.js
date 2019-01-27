@@ -91,6 +91,7 @@ module.exports = {
 
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.spoiler,
+                  tags: edge.node.frontmatter.tags,
                   image: edge.node.frontmatter.image,
                   imageAlt: edge.node.frontmatter.imageAlt,
                   date: edge.node.fields.date,
@@ -120,6 +121,7 @@ module.exports = {
                         spoiler
                         image
                         imageAlt
+                        tags
                       }
                     }
                   }

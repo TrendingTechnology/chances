@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: Some thoughts on how to move forward for a more just and representative workplace — regardless of your position.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215581/chance.tech/images/audrone-locaityte-398486-unsplash-1024x683.jpg'
 imageAlt: 'A bouy floating on a rocky shore'
+tags: ['business', 'diversity', 'do better']
 ---
 
 What I learned from writing my last post is that I don’t know all of the right answers. That’s a tough place to be for a human. We like having all the right answers and simple scapegoats to point to when things aren’t the way they should be.

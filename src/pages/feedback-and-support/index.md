@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: Now that I have a half-year of successful self-employment behind me, here is a look at what it would take for me to look back.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215581/chance.tech/images/andrea-tummons-448834-unsplash-1568x1045.jpg'
 imageAlt: 'Two girls walking on street'
+tags: ['business', 'careers', 'learning']
 ---
 
 I had the opportunity to receive feedback from one of my team leads yesterday. It was insightful and helpful as it usually is when I get good, thoughtful feedback (something that is rarely offered unless explicitly requested, it seems). During this discussion he and I discussed my status as a contractor and some hypothetical scenarios under which I might consider full-time employment with the company. I won’t divulge details of the conversation, but it was a good question that made me think about what it would take to draw me back into a 9-5 role.

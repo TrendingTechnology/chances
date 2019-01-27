@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: What do you do when you feel out of sync with where you work but you don’t feel out of sync with the mission of the organization itself?
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215582/chance.tech/images/emre-gencer-231172-unsplash-1024x683.jpg'
 imageAlt: 'A seagull flying in a flock'
+tags: ['blog', 'growth', 'uncertainty']
 ---
 
 I don’t really feel all to inspired to share an “original” thought today, but I do want to add value to my future self when I go back and review my musings later. So today I’m going to post a few responses to a question that came up in [one of my favorite Slack groups](http://randsinrepose.com/welcome-to-rands-leadership-slack/).

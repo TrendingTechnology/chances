@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: Coding schools and college degrees are great. Consider alternative routes if you have them.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215583/chance.tech/images/taras-shypka-424924-unsplash-1024x683.jpg'
 imageAlt: 'Computer screen with a lot of code displayed.'
+tags: ['advice', 'careers', 'learning']
 ---
 
 This morning as I was lurking on [Reddit](https://www.reddit.com/user/chancethedev), I was struck by a post in [r/financialindependence](https://www.reddit.com/r/financialindependence/). The user, a mechanical engineer, hated his job and wanted to quit to seek out a new gig as a programmer. He had enough savings to get by in the mean time, but he was afraid that quitting and spending a year unemployed while learning new skills would prevent him from his goal of financial independence.

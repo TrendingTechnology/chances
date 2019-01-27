@@ -96,6 +96,7 @@ class Layout extends React.Component {
                   <SidePanel
                     className="Layout__menuWrapper"
                     isActive={this.state.menuIsActive}
+                    aria-hidden={!this.state.menuIsActive}
                   >
                     <label
                       htmlFor="darkModeToggle"
@@ -109,6 +110,7 @@ class Layout extends React.Component {
                       checked={darkMode}
                       onChange={toggleDarkMode}
                       label="Toggle between dark and light mode"
+                      tabIndex={!this.state.menuIsActive && -1}
                     />
                   </SidePanel>
                 </div>

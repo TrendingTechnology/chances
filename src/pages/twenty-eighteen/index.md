@@ -6,6 +6,7 @@ langs: ['en']
 spoiler: A reflection. A work in progress. Stay tuned.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/v1548215582/chance.tech/images/sam-mgrdichian-390682-unsplash-1568x1045.jpg'
 imageAlt: 'Silhouette of a man climbing a mountain'
+tags: ['life', 'growth', 'learning']
 ---
 
 As is true for many of us, a new year is a great time for me to reflect and consider the events that unfolded in proximity to my life and the decisions I made in response to them. Framing my reflection in this manner is useful as well; after all, many of the things we encounter daily are things over which we have no control. I think it’s important to remember that as we evaluate what has passed and what we hope to build on in the year ahead. Thus begins a series of posts where I do that for myself.

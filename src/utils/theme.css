@@ -64,7 +64,8 @@ a,
 button,
 input {
   transition: var(--transition-speed) background-color var(--transition-func),
-    var(--transition-speed) color var(--transition-func);
+    var(--transition-speed) color var(--transition-func),
+    var(--transition-speed) border-color var(--transition-func);
   -webkit-tap-highlight-color: transparent;
 }
 

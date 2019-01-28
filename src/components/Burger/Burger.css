@@ -10,11 +10,13 @@
     var(--transition-speed) border-color var(--transition-func);
   border: 1px solid var(--light-gray);
   background-color: var(--white);
+  cursor: pointer;
   appearance: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 
   &:focus,
+  &:hover,
   &--active {
     border-color: var(--medium-gray);
   }

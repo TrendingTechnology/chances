@@ -57,7 +57,10 @@ class Bio extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <TwitterIcon className="Bio__twitterIcon" />
+              <TwitterIcon
+                className="Bio__twitterIcon"
+                title="Click to go to Chance's Twitter"
+              />
             </a>
           </p>
         </div>

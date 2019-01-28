@@ -1,9 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { uniq } from 'lodash';
+import { uniq, uniqueId } from 'lodash';
 import cx from 'classnames';
 import { Consumer } from '../Context';
-import Bio from '../Bio';
 import HomeHeader from '../HomeHeader';
 import Burger from '../Burger';
 import BlogHeader from '../BlogHeader';
@@ -22,6 +21,8 @@ class Layout extends React.Component {
   state = {
     menuIsActive: false,
   };
+
+  _toggleId = uniqueId(`toggle-`);
 
   toggleMenu = () =>
     this.setState(state => ({ menuIsActive: !state.menuIsActive }));
@@ -99,13 +100,13 @@ class Layout extends React.Component {
                     aria-hidden={!this.state.menuIsActive}
                   >
                     <label
-                      htmlFor="darkModeToggle"
+                      htmlFor={this._toggleId}
                       className="Layout__darkModeLabel"
                     >
                       Dark Mode
                     </label>
                     <Toggle
-                      id="darkModeToggle"
+                      id={this._toggleId}
                       className="Layout__darkModeToggle"
                       checked={darkMode}
                       onChange={toggleDarkMode}

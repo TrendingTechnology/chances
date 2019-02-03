@@ -1,22 +1,41 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { noop } from 'lodash';
-const Context = React.createContext();
+const defaultState = {
+  darkMode: false,
+  toggleDarkMode: noop,
+};
+const Context = React.createContext(defaultState);
 
-const localStorage =
-  typeof window !== 'undefined'
-    ? window.localStorage
-    : { getItem: noop, setItem: noop };
+export class Provider extends PureComponent {
+  state = { darkMode: false };
 
-export class Provider extends Component {
-  state = {
-    darkMode: localStorage.getItem('theme') === 'dark' ? true : false,
-  };
+  setModeInLocalStorage = darkMode =>
+    window.localStorage.setItem('darkMode', JSON.stringify(darkMode));
+
+  componentDidMount() {
+    // Get the dark mode value from localStorage
+    const darkMode = JSON.parse(window.localStorage.getItem('darkMode'));
+    if (darkMode) {
+      this.setState({ darkMode });
+    } else if (
+      // Check dark mode preference in OS
+      // Requires macOS Mojave
+      window.matchMedia('(prefers-color-scheme: dark)').matches === true
+    ) {
+      this.setState(
+        {
+          darkMode: true,
+        },
+        () => this.setModeInLocalStorage(true)
+      );
+    }
+  }
 
   toggleDarkMode = () =>
-    this.setState(state => {
-      localStorage.setItem('theme', state.darkMode ? 'light' : 'dark');
-      return { darkMode: !state.darkMode };
-    });
+    this.setState(
+      state => ({ darkMode: !state.darkMode }),
+      () => this.setModeInLocalStorage(this.state.darkMode)
+    );
 
   render() {
     return (

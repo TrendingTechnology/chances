@@ -38,7 +38,7 @@ class BlogIndex extends Component {
           (searchContent.includes(searchValue) ||
             searchTitle.includes(searchValue) ||
             searchTags.includes(searchValue));
-        return (!searchValue || match) && node.fields.langKey === 'en';
+        return !searchValue || match;
       }
     );
 
@@ -85,12 +85,14 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      filter: { fields: { collection: { eq: "posts" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           fields {
             slug
-            langKey
           }
           timeToRead
           html

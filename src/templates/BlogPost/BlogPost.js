@@ -130,7 +130,6 @@ export const query = graphql`
       }
       fields {
         slug
-        langKey
       }
     }
   }

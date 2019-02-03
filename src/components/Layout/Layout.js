@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { uniq, uniqueId } from 'lodash';
 import cx from 'classnames';
+import { StaticQuery, graphql } from 'gatsby';
 import { Consumer } from '../Context';
 import HomeHeader from '../HomeHeader';
 import Burger from '../Burger';
@@ -10,8 +11,20 @@ import Footer from '../Footer';
 import GithubButton from '../GithubButton';
 import SidePanel from '../SidePanel';
 import Toggle from '../Toggle';
+import Menu from '../Menu';
 import { Fonts, webFonts } from '../../utils/fonts';
 import './Layout.css';
+
+const MENU_ITEMS = [
+  {
+    label: 'Posts',
+    href: '/',
+  },
+  {
+    label: 'Books',
+    href: '/books',
+  },
+].map((item, id) => ({ ...item, id }));
 
 class Layout extends React.Component {
   async componentDidMount() {
@@ -68,60 +81,78 @@ class Layout extends React.Component {
       );
     }
     return (
-      <Consumer>
-        {({ darkMode, toggleDarkMode }) => {
-          return (
-            <div className={cx('Layout', className)}>
-              <Helmet bodyAttributes={{ class: cx({ darkMode }) }}>
-                {this.renderFontLinks()}
-              </Helmet>
-              <header
-                className={cx(`Layout__header`, {
-                  'Layout__header--wide':
-                    location.pathname !== rootPath && image,
-                })}
-              >
-                {header}
-                <hr className="Layout__break" />
-                <div className="Layout__fixed">
-                  <GithubButton
-                    className="Layout__forkButton"
-                    aria-label="Fork on GitHub"
-                    label="Fork"
-                  />
-                  <Burger
-                    className="Layout__burger"
-                    onClick={this.toggleMenu}
-                    isActive={this.state.menuIsActive}
-                  />
-                  <SidePanel
-                    className="Layout__menuWrapper"
-                    isActive={this.state.menuIsActive}
-                    aria-hidden={!this.state.menuIsActive}
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
+            }
+          }
+        `}
+        render={data => (
+          <Consumer>
+            {({ darkMode, toggleDarkMode }) => {
+              return (
+                <div className={cx('Layout', className)}>
+                  <Helmet bodyAttributes={{ class: cx({ darkMode }) }}>
+                    {this.renderFontLinks()}
+                  </Helmet>
+                  <header
+                    className={cx(`Layout__header`, {
+                      'Layout__header--wide':
+                        location.pathname !== rootPath && image,
+                    })}
                   >
-                    <label
-                      htmlFor={this._toggleId}
-                      className="Layout__darkModeLabel"
-                    >
-                      Dark Mode
-                    </label>
-                    <Toggle
-                      id={this._toggleId}
-                      className="Layout__darkModeToggle"
-                      checked={darkMode}
-                      onChange={toggleDarkMode}
-                      label="Toggle between dark and light mode"
-                      tabIndex={!this.state.menuIsActive && -1}
-                    />
-                  </SidePanel>
+                    {header}
+                    <hr className="Layout__break" />
+                    <div className="Layout__fixed">
+                      <GithubButton
+                        className="Layout__forkButton"
+                        aria-label="Fork on GitHub"
+                        label="Fork"
+                      />
+                      <Burger
+                        className="Layout__burger"
+                        onClick={this.toggleMenu}
+                        isActive={this.state.menuIsActive}
+                      />
+                      <SidePanel
+                        className="Layout__menuWrapper"
+                        isActive={this.state.menuIsActive}
+                        aria-hidden={!this.state.menuIsActive}
+                      >
+                        <div className="Layout__darkModeWrapper">
+                          <label
+                            htmlFor={this._toggleId}
+                            className="Layout__darkModeLabel"
+                          >
+                            Dark Mode
+                          </label>
+                          <Toggle
+                            id={this._toggleId}
+                            className="Layout__darkModeToggle"
+                            checked={darkMode}
+                            onChange={toggleDarkMode}
+                            label="Toggle between dark and light mode"
+                            tabIndex={!this.state.menuIsActive && -1}
+                          />
+                        </div>
+                        {/* <nav>
+                          <Menu items={MENU_ITEMS} />
+                        </nav> */}
+                      </SidePanel>
+                    </div>
+                  </header>
+                  <main className="Layout__main">{children}</main>
+                  <Footer className="Layout__footer" />
                 </div>
-              </header>
-              <main className="Layout__main">{children}</main>
-              <Footer className="Layout__footer" />
-            </div>
-          );
-        }}
-      </Consumer>
+              );
+            }}
+          </Consumer>
+        )}
+      />
     );
   }
 }

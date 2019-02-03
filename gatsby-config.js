@@ -21,6 +21,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/posts`,
+        name: 'posts',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/books`,
+        name: 'books',
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -106,7 +120,7 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   sort: { order: DESC, fields: [frontmatter___date] }
-                  filter: {fields: { langKey: {eq: "en"}}}
+                  filter: { fields: { collection: { eq: "posts" } } }
                 ) {
                   edges {
                     node {
@@ -147,13 +161,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyDefault: languages.defaultLangKey,
-        useLangKeyLayout: false,
-      },
-    },
     `gatsby-plugin-postcss`,
   ],
 };

@@ -1,7 +1,42 @@
 const _ = require('lodash');
 const Promise = require('bluebird');
 const path = require('path');
-const { defaultLangKey } = require('./languages');
+const { createFilePath } = require(`gatsby-source-filesystem`);
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+  if (_.get(node, 'internal.type') === `MarkdownRemark`) {
+    const parent = getNode(_.get(node, 'parent'));
+    const contentType = _.get(parent, 'sourceInstanceName');
+
+    // Get the slug from our file path.
+    // Content type directory names must match the type defined in gatsby-config.
+    const relativeFilePath = createFilePath({
+      node,
+      getNode,
+      basePath: `${contentType}/`,
+    });
+
+    // Register our slug.
+    // We have to do this manually since we're using gatsby-filesystem
+    // to move files outside of the pages directory.
+    createNodeField({
+      node,
+      name: 'slug',
+      value:
+        contentType === 'posts'
+          ? `/${relativeFilePath}`
+          : `/${contentType}/${relativeFilePath}`,
+    });
+
+    // Register the collection field for segmenting content types.
+    createNodeField({
+      node,
+      name: 'collection',
+      value: contentType,
+    });
+  }
+};
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage /* createRedirect */ } = actions;
@@ -21,6 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
         `
           {
             allMarkdownRemark(
+              filter: { fields: { collection: { eq: "posts" } } }
               sort: { fields: [frontmatter___date], order: DESC }
               limit: 1000
             ) {
@@ -28,7 +64,6 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   fields {
                     slug
-                    langKey
                   }
                   frontmatter {
                     title
@@ -47,17 +82,12 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create blog posts pages.
         const posts = result.data.allMarkdownRemark.edges;
-        const defaultLangPosts = posts.filter(
-          ({ node }) => node.fields.langKey === defaultLangKey
-        );
-        _.forEach(defaultLangPosts, (post, index) => {
+        _.forEach(posts, (post, index) => {
           const { slug } = post.node.fields;
           const component = BlogPost;
           const previous =
-            index === defaultLangPosts.length - 1
-              ? null
-              : defaultLangPosts[index + 1].node;
-          const next = index === 0 ? null : defaultLangPosts[index - 1].node;
+            index === posts.length - 1 ? null : posts[index + 1].node;
+          const next = index === 0 ? null : posts[index - 1].node;
 
           createPage({
             path: slug,
@@ -68,17 +98,6 @@ exports.createPages = ({ graphql, actions }) => {
               next,
             },
           });
-
-          const otherLangPosts = posts.filter(
-            ({ node }) => node.fields.langKey !== defaultLangKey
-          );
-          _.forEach(otherLangPosts, post =>
-            createPage({
-              path: post.node.fields.slug,
-              component,
-              context: { slug },
-            })
-          );
         });
       })
     );

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import T from 'prop-types';
 import cx from 'classnames';
 import { Link } from 'gatsby';
-import shape from '../../utils/types/menuItem';
+import menuItemShape from '../../utils/types/menuItem';
 import './Menu.css';
 
 /**
@@ -70,7 +70,7 @@ MenuLink.propTypes = {
 class Menu extends PureComponent {
   static propTypes = {
     className: T.string,
-    items: T.arrayOf(shape).isRequired,
+    items: T.arrayOf(menuItemShape).isRequired,
   };
 
   renderSubMenu = children => {

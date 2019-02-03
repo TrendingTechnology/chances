@@ -52,10 +52,10 @@
     }
   }
 
-  &__darkModeToggle,
-  &__darkModeLabel {
+  &__darkModeWrapper {
     width: 36px;
     margin-right: 56px;
+    margin-bottom: 24px;
     @media screen and (min-width: 40em) {
       margin-right: 64px;
     }

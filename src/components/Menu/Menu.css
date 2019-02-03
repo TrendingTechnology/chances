@@ -1,0 +1,9 @@
+.Menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__submenu {
+    list-style: none;
+  }
+}

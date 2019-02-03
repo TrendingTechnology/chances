@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Chance Strickland <chance.strickland@gmail.com>",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -p 6060",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
     "start": "yarn dev",

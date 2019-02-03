@@ -51,7 +51,10 @@ class Toggle extends PureComponent {
         onClick={this.handleClick}
       >
         <div className="Toggle__track" />
-        <div className="Toggle__thumb" />
+        <div className="Toggle__thumb">
+          <div className="Toggle__crater" aria-hidden />
+          <div className="Toggle__crater" aria-hidden />
+        </div>
         <input
           {...inputProps}
           ref={ref => {

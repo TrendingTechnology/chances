@@ -1,9 +1,19 @@
 // Forked from https://github.com/aaronshaf/react-toggle/
 import React, { PureComponent } from 'react';
 import cx from 'classnames';
+import T from 'prop-types';
+import { noop } from 'lodash';
 import './Toggle.css';
 
 class Toggle extends PureComponent {
+  static defaultProps = {
+    thumbChildren: noop,
+  };
+
+  static propTypes = {
+    thumbChildren: T.func,
+  };
+
   state = {
     checked: false,
     hasFocus: false,
@@ -39,7 +49,15 @@ class Toggle extends PureComponent {
   };
 
   render() {
-    const { className, label, ...inputProps } = this.props;
+    const {
+      className,
+      label,
+      trackClass,
+      thumbClass,
+      thumbChildren,
+      inputClass,
+      ...inputProps
+    } = this.props;
     const { checked } = this.state;
     return (
       <div
@@ -50,11 +68,8 @@ class Toggle extends PureComponent {
         })}
         onClick={this.handleClick}
       >
-        <div className="Toggle__track" />
-        <div className="Toggle__thumb">
-          <div className="Toggle__crater" aria-hidden />
-          <div className="Toggle__crater" aria-hidden />
-        </div>
+        <div className={cx('Toggle__track', trackClass)} />
+        <div className={cx('Toggle__thumb', thumbClass)}>{thumbChildren()}</div>
         <input
           {...inputProps}
           ref={ref => {
@@ -62,7 +77,7 @@ class Toggle extends PureComponent {
           }}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-          className="Toggle__srt"
+          className={cx('Toggle__input', inputClass)}
           type="checkbox"
           aria-label={label}
         />

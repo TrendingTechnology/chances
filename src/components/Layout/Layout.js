@@ -10,7 +10,7 @@ import BlogHeader from '../BlogHeader';
 import Footer from '../Footer';
 import GithubButton from '../GithubButton';
 import SidePanel from '../SidePanel';
-import Toggle from '../Toggle';
+import DarkModeToggle from '../DarkModeToggle';
 import Menu from '../Menu';
 import { Fonts, webFonts } from '../../utils/fonts';
 import './Layout.css';
@@ -35,8 +35,6 @@ class Layout extends React.Component {
     menuIsActive: false,
   };
 
-  _toggleId = uniqueId(`toggle-`);
-
   toggleMenu = () =>
     this.setState(state => ({ menuIsActive: !state.menuIsActive }));
 
@@ -53,6 +51,7 @@ class Layout extends React.Component {
       subtitle,
       date,
       image,
+      header: headerProp,
       imageAlt,
       timeToRead,
       children,
@@ -68,6 +67,8 @@ class Layout extends React.Component {
           handleSearchChange={handleSearchChange}
         />
       );
+    } else if (headerProp) {
+      header = headerProp;
     } else {
       header = (
         <BlogHeader
@@ -93,7 +94,7 @@ class Layout extends React.Component {
         `}
         render={data => (
           <Consumer>
-            {({ darkMode, toggleDarkMode }) => {
+            {({ darkMode }) => {
               return (
                 <div className={cx('Layout', className)}>
                   <Helmet bodyAttributes={{ class: cx({ darkMode }) }}>
@@ -123,25 +124,13 @@ class Layout extends React.Component {
                         isActive={this.state.menuIsActive}
                         aria-hidden={!this.state.menuIsActive}
                       >
-                        <div className="Layout__darkModeWrapper">
-                          <label
-                            htmlFor={this._toggleId}
-                            className="Layout__darkModeLabel"
-                          >
-                            Dark Mode
-                          </label>
-                          <Toggle
-                            id={this._toggleId}
-                            className="Layout__darkModeToggle"
-                            checked={darkMode}
-                            onChange={toggleDarkMode}
-                            label="Toggle between dark and light mode"
-                            tabIndex={!this.state.menuIsActive && -1}
-                          />
-                        </div>
-                        {/* <nav>
+                        <DarkModeToggle
+                          className="Layout__darkModeToggle"
+                          tabIndex={(!this.state.menuIsActive && -1).toString()}
+                        />
+                        <nav>
                           <Menu items={MENU_ITEMS} />
-                        </nav> */}
+                        </nav>
                       </SidePanel>
                     </div>
                   </header>

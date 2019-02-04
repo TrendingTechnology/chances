@@ -52,7 +52,7 @@
     }
   }
 
-  &__darkModeWrapper {
+  &__darkModeToggle {
     width: 36px;
     margin-right: 56px;
     margin-bottom: 24px;
@@ -62,18 +62,6 @@
     @media screen and (min-width: 90em) {
       margin-right: 84px;
     }
-  }
-
-  &__darkModeLabel {
-    display: block;
-    width: 36px;
-    margin-bottom: 6px;
-    font-family: var(--font-sans);
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    text-transform: uppercase;
   }
 
   &__burger {

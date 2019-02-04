@@ -1,3 +1,4 @@
+/* stylelint-disable selector-nested-pattern */
 .DarkModeToggle {
   &__thumb {
     background-color: #ffffed;
@@ -16,13 +17,22 @@
     }
 
     .Toggle--focus & {
-      box-shadow: 0 0 2px 3px var(--green), 0px 0px 10px 4px #ffffed;
+      box-shadow: 0px 0px 10px 4px #ffffed;
+
+      [data-whatinput='keyboard'] & {
+        box-shadow: 0 0 2px 3px var(--green), 0px 0px 10px 4px #ffffed;
+      }
     }
 
     .Toggle--checked.Toggle--focus & {
-      box-shadow: 0 0 2px 3px var(--green),
-        inset -2px -2px 2px 0px rgba(0, 0, 0, 0.25),
+      box-shadow: inset -2px -2px 2px 0px rgba(0, 0, 0, 0.25),
         inset 0 0 2px 1px rgba(0, 0, 0, 0.5);
+
+      [data-whatinput='keyboard'] & {
+        box-shadow: 0 0 2px 3px var(--green),
+          inset -2px -2px 2px 0px rgba(0, 0, 0, 0.25),
+          inset 0 0 2px 1px rgba(0, 0, 0, 0.5);
+      }
     }
   }
 

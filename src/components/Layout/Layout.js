@@ -128,9 +128,9 @@ class Layout extends React.Component {
                           className="Layout__darkModeToggle"
                           tabIndex={(!this.state.menuIsActive && -1).toString()}
                         />
-                        <nav>
+                        {/* <nav>
                           <Menu items={MENU_ITEMS} />
-                        </nav>
+                        </nav> */}
                       </SidePanel>
                     </div>
                   </header>

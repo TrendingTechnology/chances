@@ -12,6 +12,7 @@ class Bio extends Component {
     headingEl: T.oneOfType([T.node, T.string]),
     nameLink: T.string,
     date: T.string,
+    updated: T.string,
   };
 
   static defaultProps = {
@@ -30,10 +31,11 @@ class Bio extends Component {
   };
 
   render() {
-    const { headingEl: H, className, timeToRead, date } = this.props;
+    const { headingEl: H, className, timeToRead, date, updated } = this.props;
     const sep = <span className="Bio__sep">·</span>;
     const description = compact([
       date,
+      updated ? `Updated ${updated}` : null,
       timeToRead || `Tech, leadership and people`,
     ]).map((e, i, a) => (
       <React.Fragment key={e}>

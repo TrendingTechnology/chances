@@ -23,6 +23,7 @@ class BlogPost extends Component {
         location={this.props.location}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
+        updated={post.frontmatter.updated}
         subtitle={post.frontmatter.subtitle}
         image={post.frontmatter.image}
         imageAlt={post.frontmatter.imageAlt}
@@ -127,6 +128,7 @@ export const query = graphql`
         spoiler
         image
         imageAlt
+        updated(formatString: "MMMM D, YYYY")
       }
       fields {
         slug

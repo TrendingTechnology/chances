@@ -9,14 +9,26 @@ export const webFonts = {
   'ibm-plex-mono': typekitCss,
 };
 
-export const Fonts = () => {
-  forEach(webFonts, async (_, key) => {
-    const font = new FontFaceObserver(key);
-    try {
-      await font.load();
-      document.documentElement.classList.add(kebabCase(key));
-    } catch (e) {
-      console.error(e);
-    }
-  });
+export const Fonts = async () => {
+  try {
+    const allFontsLoaded = new Promise((resolve, reject) => {
+      Object.keys(webFonts).forEach(async (key, i, arr) => {
+        const font = new FontFaceObserver(key);
+        try {
+          await font.load();
+          document.documentElement.classList.add(kebabCase(key));
+          if (i === arr.length - 1) {
+            resolve(true);
+          }
+        } catch (e) {
+          resolve(true);
+          console.error(e);
+        }
+      });
+    });
+    return await allFontsLoaded;
+  } catch (e) {
+    console.error(e);
+    return true;
+  }
 };

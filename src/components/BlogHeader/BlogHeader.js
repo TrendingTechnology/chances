@@ -15,7 +15,15 @@ class BlogHeader extends Component {
   };
 
   render() {
-    const { title, subtitle, timeToRead, image, imageAlt, date } = this.props;
+    const {
+      title,
+      subtitle,
+      timeToRead,
+      image,
+      imageAlt,
+      date,
+      updated,
+    } = this.props;
     return (
       <div
         className={cx('BlogHeader', {
@@ -36,6 +44,7 @@ class BlogHeader extends Component {
             className="BlogHeader__bio"
             timeToRead={timeToRead}
             date={date}
+            updated={updated}
             nameLink="/"
           />
         </div>

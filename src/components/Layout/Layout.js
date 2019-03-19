@@ -27,13 +27,12 @@ const MENU_ITEMS = [
 ].map((item, id) => ({ ...item, id }));
 
 class Layout extends React.Component {
-  async componentDidMount() {
-    await Fonts();
-  }
-
   state = {
     menuIsActive: false,
+    mounted: false,
   };
+
+  _timeout = null;
 
   toggleMenu = () =>
     this.setState(state => ({ menuIsActive: !state.menuIsActive }));
@@ -42,6 +41,18 @@ class Layout extends React.Component {
     uniq(Object.values(webFonts)).map(val => (
       <link key={val} rel="stylesheet" href={val} />
     ));
+
+  componentWillUnmount() {
+    clearTimeout(this._timeout);
+  }
+
+  async componentDidMount() {
+    const fontsLoaded = await Fonts();
+    if (fontsLoaded) {
+      // set a short timeout after all fonts are loaded to trigger animations.
+      this._timeout = setTimeout(() => this.setState({ mounted: true }), 150);
+    }
+  }
 
   render() {
     const {
@@ -54,6 +65,7 @@ class Layout extends React.Component {
       header: headerProp,
       imageAlt,
       timeToRead,
+      updated,
       children,
       handleSearchChange,
     } = this.props;
@@ -76,6 +88,7 @@ class Layout extends React.Component {
           subtitle={subtitle}
           timeToRead={timeToRead}
           date={date}
+          updated={updated}
           image={image}
           imageAlt={imageAlt}
         />
@@ -97,7 +110,11 @@ class Layout extends React.Component {
             {({ darkMode }) => {
               return (
                 <div className={cx('Layout', className)}>
-                  <Helmet bodyAttributes={{ class: cx({ darkMode }) }}>
+                  <Helmet
+                    bodyAttributes={{
+                      class: cx({ darkMode, loaded: this.state.mounted }),
+                    }}
+                  >
                     {this.renderFontLinks()}
                   </Helmet>
                   <header

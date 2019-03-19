@@ -77,7 +77,7 @@ class BlogPost extends Component {
               {previous && (
                 <Link
                   className="BlogPost__postNavLink"
-                  to={previous.fields.slug}
+                  to={`/${previous.fields.slug}`}
                   rel="prev"
                 >
                   {previous.frontmatter.title}
@@ -92,7 +92,7 @@ class BlogPost extends Component {
               {next && (
                 <Link
                   className="BlogPost__postNavLink"
-                  to={next.fields.slug}
+                  to={`/${next.fields.slug}`}
                   rel="next"
                 >
                   {next.frontmatter.title}

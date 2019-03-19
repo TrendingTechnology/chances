@@ -1,5 +1,7 @@
 # Chances
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/chancestrickland/chances.svg)](https://greenkeeper.io/)
+
 A Gatsby blog. Mostly straight-up jacked from [Dan-demigod-Abramov](https://github.com/gaearon/overreacted.io) and just re-themed because, really, how many blogs do we need to write from scratch?
 
 To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.

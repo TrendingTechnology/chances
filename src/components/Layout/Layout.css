@@ -31,6 +31,10 @@
         }
       }
     }
+
+    body.loaded & {
+      // animation: fadeIn 500ms ease-in-out 500ms forwards;
+    }
   }
 
   &__fixed {
@@ -39,14 +43,9 @@
     z-index: 1;
     top: 24px;
     right: 24px;
-    opacity: 0;
     @media screen and (min-width: 90em) {
       top: 40px;
       right: 40px;
-    }
-
-    body.loaded & {
-      animation: fadeIn 500ms ease-in-out 500ms forwards;
     }
   }
 

@@ -59,20 +59,11 @@ body {
 body {
   background-color: var(--white);
   color: var(--black);
-
-  & > * {
-    opacity: 0;
-  }
 }
 
 body.loaded {
   transition: var(--transition-speed) background-color var(--transition-func),
     var(--transition-speed) color var(--transition-func);
-
-  & > * {
-    animation: fadeAndLiftIn 490ms ease-in-out forwards;
-    /* opacity: 1; */
-  }
 }
 
 .darkMode {

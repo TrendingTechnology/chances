@@ -1,10 +1,10 @@
 ---
 title: Morning Routine
-subtitle: A lot of ink has been spilt on the best way to start of one's day. Here I offer to pour out more. This is what helps me get up and running.
+subtitle: A lot of ink has been spilt on the best way to start one's day. Here I offer to pour out more. This is what helps me get up and running.
 date: '2019-03-15'
 updated: '2019-03-18'
 langs: ['en']
-spoiler: A lot of ink has been spilt on the best way to start of one's day. Here I offer to pour out more. This is what helps me get up and running.
+spoiler: A lot of ink has been spilt on the best way to start one's day. Here I offer to pour out more. This is what helps me get up and running.
 image: 'https://res.cloudinary.com/chancedigital/image/upload/c_scale,w_1500/v1551843622/chance.tech/images/philipp-cordts-326252-unsplash.jpg'
 imageAlt: 'A man wearing a robe pouring tea in a white ceramic mug'
 tags: ['productivity']

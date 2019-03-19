@@ -1,5 +1,3 @@
-const languages = require('./languages');
-
 module.exports = {
   siteMetadata: {
     title: 'Chances',
@@ -11,7 +9,6 @@ module.exports = {
       twitter: '@chancethedev',
     },
   },
-  pathPrefix: '/',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

@@ -89,8 +89,10 @@ exports.createPages = ({ graphql, actions }) => {
             index === posts.length - 1 ? null : posts[index + 1].node;
           const next = index === 0 ? null : posts[index - 1].node;
 
+          console.log(slug);
+
           createPage({
-            path: slug,
+            path: slug.replace(/^(\/*)|(\/*)$/g, '').trim(),
             component,
             context: {
               slug,

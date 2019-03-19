@@ -4,7 +4,11 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../../components/Bio';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
-import { formatReadingTime } from '../../utils/helpers';
+import {
+  formatReadingTime,
+  unslashit,
+  leadingSlashit,
+} from '../../utils/helpers';
 import './BlogPost.css';
 
 const GITHUB_USERNAME = 'chancestrickland';
@@ -14,9 +18,11 @@ class BlogPost extends Component {
   render() {
     const post = this.props.data.markdownRemark;
     const { previous, next, slug } = this.props.pageContext;
-    const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages/${slug}/index.md`;
+    const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/posts/${unslashit(
+      slug
+    )}/index.md`;
     const shareUrl = `https://twitter.com/home?status=${encodeURIComponent(
-      `${post.frontmatter.title} https://chancedigital.io/${slug}`
+      `${post.frontmatter.title} https://chancedigital.io/${unslashit(slug)}`
     )}`;
     return (
       <Layout
@@ -77,7 +83,7 @@ class BlogPost extends Component {
               {previous && (
                 <Link
                   className="BlogPost__postNavLink"
-                  to={previous.fields.slug}
+                  to={leadingSlashit(previous.fields.slug)}
                   rel="prev"
                 >
                   {previous.frontmatter.title}
@@ -92,7 +98,7 @@ class BlogPost extends Component {
               {next && (
                 <Link
                   className="BlogPost__postNavLink"
-                  to={next.fields.slug}
+                  to={leadingSlashit(next.fields.slug)}
                   rel="next"
                 >
                   {next.frontmatter.title}

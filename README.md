@@ -2,7 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/chancestrickland/chances.svg)](https://greenkeeper.io/)
 
-A Gatsby blog. Mostly straight-up jacked from [Dan-demigod-Abramov](https://github.com/gaearon/overreacted.io) and just re-themed because, really, how many blogs do we need to write from scratch?
+Another Gatsby.js blog.
 
 To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
 
@@ -13,8 +13,8 @@ To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
 - [x] Update all blog posts
 - [x] Live search
 - [x] Dark mode toggle
+- [x] Look into improving FOUC with Typekit (resolved for now with a fade-in entrance effect)
+- [x] 404 template
 - [ ] Share buttons
 - [ ] .md > .mdx
-- [ ] 404 template
 - [ ] Newsletter form
-- [ ] Look into improving FOUC with Typekit (low priority)

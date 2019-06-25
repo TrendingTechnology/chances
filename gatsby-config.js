@@ -1,48 +1,51 @@
+/* eslint-disable camelcase */
+const siteUrl = 'https://chances.tech';
+
 module.exports = {
   siteMetadata: {
     title: 'Chances',
-    author: 'Chance Strickland',
+    siteUrl,
     description:
       'Personal blog by Chance Strickland. Web developer who occasionally podcasts.',
-    siteUrl: 'https://chances.tech',
+    author: 'Chance Strickland',
     social: {
       twitter: '@chancethedev',
     },
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/posts`,
         name: 'posts',
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/books`,
         name: 'books',
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
             },
           },
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: 'gatsby-remark-responsive-iframe',
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
@@ -59,16 +62,16 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: `UA-30462412-1`,
       },
     },
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: 'gatsby-plugin-feed',
       options: {
         query: `
           {
@@ -86,7 +89,6 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
-                const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
                 <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at chances.tech. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
@@ -146,18 +148,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `Chances`,
-        short_name: `Chances`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#33c800`,
-        display: `minimal-ui`,
-        icon: `src/assets/icon.png`,
+        name: 'Chances',
+        short_name: 'Chances',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#33c800',
+        display: 'minimal-ui',
+        icon: 'src/assets/icon.png',
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-postcss`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-postcss',
   ],
 };

@@ -13,7 +13,7 @@
   --red: #dc5c3a;
   --green: #33c800;
   --transition-speed: 0.2s;
-  --transition-func: ease-in;
+  --transition-func: ease-out;
   --mq-medium: 40em;
   --mq-large: 64em;
   --mq-xlarge: 90em;
@@ -59,11 +59,6 @@ body {
 body {
   background-color: var(--white);
   color: var(--black);
-}
-
-body.loaded {
-  transition: var(--transition-speed) background-color var(--transition-func),
-    var(--transition-speed) color var(--transition-func);
 }
 
 .darkMode {
@@ -361,4 +356,25 @@ pre[data-line] {
     width: 100%;
     height: 100%;
   }
+}
+
+.twitter-tweet {
+  margin: 2em auto !important;
+}
+
+.twitter-tweet,
+.twitter-tweet p {
+  color: var(--medium-gray);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+.twitter-tweet p {
+  color: var(--black);
+  font-size: 1.5rem;
+}
+
+.twitter-tweet a,
+.twitter-tweet p a {
+  color: inherit;
 }

@@ -15,6 +15,8 @@ To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
 - [x] Dark mode toggle
 - [x] Look into improving FOUC with Typekit (resolved for now with a fade-in entrance effect)
 - [x] 404 template
+- [ ] Tag support
+- [ ] Book reviews
 - [ ] Share buttons
 - [ ] .md > .mdx
 - [ ] Newsletter form

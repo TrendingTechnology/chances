@@ -1,14 +1,20 @@
 {
-  "paths": {
-    "@src/*": ["src/*"],
-    "@assets/*": ["src/assets/*"],
-    "@books/*": ["src/books/*"],
-    "@components/*": ["src/components/*"],
-    "@images/*": ["static/images/*"],
-    "@pages/*": ["src/pages/*"],
-    "@posts/*": ["src/posts/*"],
-    "@providers/*": ["src/providers/*"],
-    "@templates/*": ["src/templates/*"],
-    "@utils/*": ["src/lib/*"]
-  }
+  "compilerOptions": {
+    "target": "esnext",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
+      "@books/*": ["src/books/*"],
+      "@components/*": ["src/components/*"],
+      "@images/*": ["static/images/*"],
+      "@pages/*": ["src/pages/*"],
+      "@posts/*": ["src/posts/*"],
+      "@providers/*": ["src/providers/*"],
+      "@templates/*": ["src/templates/*"],
+      "@utils/*": ["src/lib/*"]
+    }
+  },
+  "exclude": ["node_modules", "public", ".cache"]
 }

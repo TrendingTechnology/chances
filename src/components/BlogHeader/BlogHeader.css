@@ -1,12 +1,16 @@
 .BlogHeader {
   &--hasImage {
     display: grid;
+    grid-template: auto / auto;
     gap: 24px;
 
     @media screen and (min-width: 64em) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template: auto / repeat(2, 1fr);
       gap: 40px;
-      align-items: center;
+
+      > * {
+        align-self: center;
+      }
     }
   }
 

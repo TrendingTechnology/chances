@@ -8,9 +8,12 @@
 
     @media screen and (min-width: 40em) {
       display: grid;
-      grid-template-columns: repeat(2, auto);
+      grid-template: auto / repeat(2, auto);
       gap: 10px;
-      align-items: flex-start;
+
+      > * {
+        align-self: flex-start;
+      }
     }
 
     @media screen and (min-width: 64em) {

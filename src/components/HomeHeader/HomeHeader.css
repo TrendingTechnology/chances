@@ -1,10 +1,16 @@
 .HomeHeader {
   display: grid;
-  align-items: flex-end;
+  grid-template: auto / auto;
+
   gap: 24px;
+
   @media screen and (min-width: 64em) {
-    grid-template-columns: 1.5fr 1fr;
+    grid-template: auto / 1.5fr 1fr;
     margin-right: 0;
+  }
+
+  > * {
+    align-self: flex-end;
   }
 
   &__bio {

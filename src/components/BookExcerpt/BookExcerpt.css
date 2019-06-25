@@ -28,7 +28,7 @@
     perspective: 1000px;
     @media screen and (min-width: 40em) {
       display: grid;
-      grid-template-columns: 100px auto;
+      grid-template: auto / 100px auto;
       gap: 24px;
     }
   }

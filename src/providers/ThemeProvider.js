@@ -20,8 +20,7 @@ export const ThemeProvider = ({ children }) => {
     if (isBrowser) {
       window.localStorage.setItem('darkMode', JSON.stringify(darkMode));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [darkMode]);
+  }, [darkMode, isBrowser]);
 
   return (
     <ThemeContext.Provider

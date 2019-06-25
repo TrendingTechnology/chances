@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const Promise = require('bluebird');
 const path = require('path');
+const LoadablePlugin = require('@loadable/webpack-plugin');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -36,6 +37,23 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: contentType,
     });
   }
+  actions.setWebpackConfig({
+    plugins: [new LoadablePlugin()],
+    resolve: {
+      alias: {
+        '@src': path.join(__dirname, './src'),
+        '@assets': path.join(__dirname, './src/assets'),
+        '@books': path.join(__dirname, './src/books'),
+        '@components': path.join(__dirname, './src/components'),
+        '@images': path.join(__dirname, './static/images'),
+        '@pages': path.join(__dirname, './src/pages'),
+        '@posts': path.join(__dirname, './src/posts'),
+        '@providers': path.join(__dirname, './src/providers'),
+        '@templates': path.join(__dirname, './src/templates'),
+        '@utils': path.join(__dirname, './src/utils'),
+      },
+    },
+  });
 };
 
 exports.createPages = ({ graphql, actions }) => {

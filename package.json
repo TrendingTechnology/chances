@@ -12,6 +12,7 @@
     "build": "rm -rf public && rm -rf .cache && gatsby build"
   },
   "dependencies": {
+    "@loadable/webpack-plugin": "^5.7.1",
     "classnames": "^2.2.6",
     "css-mqpacker": "^7.0.0",
     "fontfaceobserver": "^2.1.0",
@@ -24,6 +25,7 @@
     "gatsby-plugin-postcss": "^2.1.0",
     "gatsby-plugin-react-helmet": "^3.1.0",
     "gatsby-plugin-sharp": "^2.2.1",
+    "gatsby-plugin-transition-link": "^1.12.4",
     "gatsby-remark-autolink-headers": "^2.1.0",
     "gatsby-remark-copy-linked-files": "^2.1.0",
     "gatsby-remark-images": "^3.1.0",
@@ -44,21 +46,45 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-spring": "^8.0.25",
     "react-transition-group": "^4.1.1",
     "striptags": "^3.1.1",
     "what-input": "^5.2.3"
   },
   "devDependencies": {
-    "@chancedigital/eslint-config": "^1.0.6",
+    "@chancedigital/eslint-config": "^2.0.0",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.0.1",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
     "gh-pages": "^2.0.1",
     "prettier": "^1.16.4",
     "stylelint": "^9.10.1",
     "stylelint-config-property-sort-order-smacss": "^4.0.2",
     "stylelint-config-recommended": "^2.1.0"
+  },
+  "eslintConfig": {
+    "extends": "@chancedigital/eslint-config/react",
+    "rules": {
+      "jsx-a11y/anchor-is-valid": 0
+    }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": true,
+    "singleQuote": true
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-config-property-sort-order-smacss"
+    ],
+    "rules": {
+      "selector-nested-pattern": "^(&|[a-z]|[.]|>|[+]|~)"
+    }
   },
   "browserslist": [
     "> 3%",

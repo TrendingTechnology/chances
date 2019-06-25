@@ -19,7 +19,7 @@ const query = graphql`
   }
 `;
 
-function SEO({ meta, image, title, description, slug, lang = 'en' }) {
+const SEO = ({ meta, image, title, description, slug, lang = 'en' }) => {
   return (
     <StaticQuery
       query={query}
@@ -32,13 +32,8 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
           <Helmet
             htmlAttributes={{ lang }}
             {...(title
-              ? {
-                  titleTemplate: `%s - ${siteMetadata.title}`,
-                  title,
-                }
-              : {
-                  title: siteMetadata.title,
-                })}
+              ? { titleTemplate: `%s - ${siteMetadata.title}`, title }
+              : { title: siteMetadata.title })}
             meta={[
               {
                 name: 'description',
@@ -93,7 +88,7 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
       }}
     />
   );
-}
+};
 
 SEO.defaultProps = {
   meta: [],

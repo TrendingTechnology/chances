@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import T from 'prop-types';
 import cx from 'classnames';
 import { Link } from 'gatsby';
@@ -63,47 +63,37 @@ MenuLink.propTypes = {
 
 /**
  * Menu component
- *
- * @class Menu
- * @extends {PureComponent}
  */
-class Menu extends PureComponent {
-  static propTypes = {
-    className: T.string,
-    items: T.arrayOf(menuItemShape).isRequired,
-  };
-
-  renderSubMenu = children => {
+const Menu = ({ className, items }) => {
+  const renderSubMenu = children => {
     if (children && children.length) {
-      return (
-        <ul className="Menu__submenu">{this.renderMenuItems(children)}</ul>
-      );
+      return <ul className="Menu__submenu">{renderMenuItems(children)}</ul>;
     }
   };
 
-  renderMenuItems = items =>
-    items.map(item => {
-      const { id, href, options, children } = item;
-      const { target, className } = options || {};
+  const renderMenuItems = its =>
+    its.map(item => {
+      const { id, href, options, children: kids } = item;
+      const { target, className: clsName } = options || {};
 
       return (
         <MenuItem
-          className={className}
+          className={clsName}
           key={id}
-          hasChildren={!!(children && children.length)}
+          hasChildren={!!(kids && kids.length)}
         >
           <MenuLink href={href} label={item.label} target={target} />
-          {this.renderSubMenu(children)}
+          {renderSubMenu(kids)}
         </MenuItem>
       );
     });
 
-  render() {
-    const { className, items } = this.props;
-    return (
-      <ul className={cx('Menu', className)}>{this.renderMenuItems(items)}</ul>
-    );
-  }
-}
+  return <ul className={cx('Menu', className)}>{renderMenuItems(items)}</ul>;
+};
+
+Menu.propTypes = {
+  className: T.string,
+  items: T.arrayOf(menuItemShape).isRequired,
+};
 
 export default Menu;

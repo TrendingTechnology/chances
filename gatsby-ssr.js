@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider } from './src/components/Context';
+import { ThemeProvider } from './src/providers/ThemeProvider';
 
 /* export const onRenderBody = ({ setPostBodyComponents }) => {
   return setPostBodyComponents([
@@ -9,4 +9,6 @@ import { Provider } from './src/components/Context';
   ]);
 }; */
 
-export const wrapRootElement = ({ element }) => <Provider>{element}</Provider>;
+export const wrapRootElement = ({ element }) => (
+  <ThemeProvider>{element}</ThemeProvider>
+);

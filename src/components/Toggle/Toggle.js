@@ -1,11 +1,11 @@
 // Forked from https://github.com/aaronshaf/react-toggle/
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import cx from 'classnames';
 import T from 'prop-types';
 import { noop } from 'lodash';
 import './Toggle.css';
 
-class Toggle extends PureComponent {
+class Toggle extends Component {
   static defaultProps = {
     thumbChildren: noop,
   };

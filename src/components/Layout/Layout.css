@@ -1,4 +1,14 @@
 .Layout {
+  /* transform: translateY(50px); */
+  transition: opacity 700ms ease-out; /* transform 800ms cubic-bezier(0.17, 0.67, 0.86, 0.99); */
+  opacity: 0;
+  background-color: var(--white);
+
+  body.loaded & {
+    /* transform: translateY(0); */
+    opacity: 1;
+  }
+
   &__main,
   &__header,
   &__footer {
@@ -30,10 +40,6 @@
           margin-top: 40px;
         }
       }
-    }
-
-    body.loaded & {
-      // animation: fadeIn 500ms ease-in-out 500ms forwards;
     }
   }
 

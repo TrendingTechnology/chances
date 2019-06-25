@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Signup.css';
 
 // @todo
-class Signup extends Component {
-  render() {
-    return <></>;
-  }
-}
+const Signup = () => {
+  return <></>;
+};
 
 export default Signup;

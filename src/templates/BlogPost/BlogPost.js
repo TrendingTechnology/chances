@@ -6,8 +6,8 @@ import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import {
   formatReadingTime,
-  unslashit,
-  leadingSlashit,
+  unSlashIt,
+  leadingSlashIt,
 } from '../../utils/helpers';
 import './BlogPost.css';
 
@@ -18,11 +18,11 @@ class BlogPost extends Component {
   render() {
     const post = this.props.data.markdownRemark;
     const { previous, next, slug } = this.props.pageContext;
-    const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/posts/${unslashit(
+    const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/posts/${unSlashIt(
       slug
     )}/index.md`;
     const shareUrl = `https://twitter.com/home?status=${encodeURIComponent(
-      `${post.frontmatter.title} https://chancedigital.io/${unslashit(slug)}`
+      `${post.frontmatter.title} https://chancedigital.io/${unSlashIt(slug)}`
     )}`;
     return (
       <Layout
@@ -83,7 +83,7 @@ class BlogPost extends Component {
               {previous && (
                 <Link
                   className="BlogPost__postNavLink"
-                  to={leadingSlashit(previous.fields.slug)}
+                  to={leadingSlashIt(previous.fields.slug)}
                   rel="prev"
                 >
                   {previous.frontmatter.title}
@@ -98,7 +98,7 @@ class BlogPost extends Component {
               {next && (
                 <Link
                   className="BlogPost__postNavLink"
-                  to={leadingSlashit(next.fields.slug)}
+                  to={leadingSlashIt(next.fields.slug)}
                   rel="next"
                 >
                   {next.frontmatter.title}

@@ -2,7 +2,7 @@ import React from 'react';
 import T from 'prop-types';
 import cx from 'classnames';
 import { Link } from 'gatsby';
-import menuItemShape from '../../utils/types/menuItem';
+import menuItemShape from '@lib/types/menuItem';
 import './Menu.css';
 
 /**

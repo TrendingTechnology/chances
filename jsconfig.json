@@ -9,11 +9,11 @@
       "@books/*": ["src/books/*"],
       "@components/*": ["src/components/*"],
       "@images/*": ["static/images/*"],
+      "@lib/*": ["src/lib/*"],
       "@pages/*": ["src/pages/*"],
       "@posts/*": ["src/posts/*"],
       "@providers/*": ["src/providers/*"],
-      "@templates/*": ["src/templates/*"],
-      "@utils/*": ["src/lib/*"]
+      "@templates/*": ["src/templates/*"]
     }
   },
   "exclude": ["node_modules", "public", ".cache"]

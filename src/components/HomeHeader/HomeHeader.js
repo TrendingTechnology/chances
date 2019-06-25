@@ -1,6 +1,6 @@
 import React from 'react';
-import Bio from '../Bio';
-import BlogSearch from '../BlogSearch';
+import Bio from '@components/Bio';
+import BlogSearch from '@components/BlogSearch';
 import './HomeHeader.css';
 
 const HomeHeader = ({ handleSearchChange }) => (

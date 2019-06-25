@@ -3,8 +3,8 @@ import T from 'prop-types';
 import { compact } from 'lodash';
 import cx from 'classnames';
 import { Link } from 'gatsby';
-import profilePic from '../../assets/headshot.jpg';
-import TwitterIcon from '../TwitterIcon';
+import profilePic from '@assets/headshot.jpg';
+import TwitterIcon from '@components/TwitterIcon';
 import './Bio.css';
 
 const Bio = ({

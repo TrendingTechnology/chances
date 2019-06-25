@@ -4,8 +4,29 @@ const path = require('path');
 const LoadablePlugin = require('@loadable/webpack-plugin');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  const { setWebpackConfig } = actions;
+  setWebpackConfig({
+    plugins: [new LoadablePlugin()],
+    resolve: {
+      alias: {
+        '@src': path.join(__dirname, './src'),
+        '@assets': path.join(__dirname, './src/assets'),
+        '@books': path.join(__dirname, './src/books'),
+        '@components': path.join(__dirname, './src/components'),
+        '@images': path.join(__dirname, './static/images'),
+        '@lib': path.join(__dirname, './src/lib'),
+        '@pages': path.join(__dirname, './src/pages'),
+        '@posts': path.join(__dirname, './src/posts'),
+        '@providers': path.join(__dirname, './src/providers'),
+        '@templates': path.join(__dirname, './src/templates'),
+      },
+    },
+  });
+};
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+  const { createNodeField, setWebpackConfig } = actions;
   if (_.get(node, 'internal.type') === `MarkdownRemark`) {
     const parent = getNode(_.get(node, 'parent'));
     const contentType = _.get(parent, 'sourceInstanceName');
@@ -37,23 +58,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: contentType,
     });
   }
-  actions.setWebpackConfig({
-    plugins: [new LoadablePlugin()],
-    resolve: {
-      alias: {
-        '@src': path.join(__dirname, './src'),
-        '@assets': path.join(__dirname, './src/assets'),
-        '@books': path.join(__dirname, './src/books'),
-        '@components': path.join(__dirname, './src/components'),
-        '@images': path.join(__dirname, './static/images'),
-        '@pages': path.join(__dirname, './src/pages'),
-        '@posts': path.join(__dirname, './src/posts'),
-        '@providers': path.join(__dirname, './src/providers'),
-        '@templates': path.join(__dirname, './src/templates'),
-        '@utils': path.join(__dirname, './src/utils'),
-      },
-    },
-  });
 };
 
 exports.createPages = ({ graphql, actions }) => {

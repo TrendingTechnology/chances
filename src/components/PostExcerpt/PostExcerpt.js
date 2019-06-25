@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import cx from 'classnames';
-import { leadingSlashIt } from '../../utils/helpers';
+import { leadingSlashIt } from '@lib/utils';
 import './PostExcerpt.css';
 
 const PostExcerpt = ({ className, title, slug, date, timeToRead, spoiler }) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import T from 'prop-types';
 import cx from 'classnames';
-import Svg from '../Svg';
+import Svg from '@components/Svg';
 
 const GithubIcon = ({ className, size, srt, title, ...rest }) => {
   return (

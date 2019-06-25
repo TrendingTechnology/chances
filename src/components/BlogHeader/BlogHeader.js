@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import { useTransition, animated } from 'react-spring';
 import T from 'prop-types';
-import Bio from '../Bio';
+import Bio from '@components/Bio';
 import './BlogHeader.css';
 
 const BlogHeader = ({

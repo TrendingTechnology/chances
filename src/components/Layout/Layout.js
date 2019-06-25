@@ -1,22 +1,22 @@
 import React, { useState, useContext } from 'react';
 import Helmet from 'react-helmet';
-import { uniq, uniqueId } from 'lodash';
+import { uniq } from 'lodash';
 import cx from 'classnames';
 import { StaticQuery, graphql } from 'gatsby';
-import { ThemeContext } from '../../providers/ThemeProvider';
-import HomeHeader from '../HomeHeader';
-import Burger from '../Burger';
-import BlogHeader from '../BlogHeader';
-import Footer from '../Footer';
-import GithubButton from '../GithubButton';
-import SidePanel from '../SidePanel';
-import DarkModeToggle from '../DarkModeToggle';
-import Menu from '../Menu';
-import { Fonts, webFonts } from '../../utils/fonts';
-import { usePromise } from '../../utils/hooks';
+import { ThemeContext } from '@providers/ThemeProvider';
+import HomeHeader from '@components/HomeHeader';
+import Burger from '@components/Burger'; /*  */
+import BlogHeader from '@components/BlogHeader';
+import Footer from '@components/Footer';
+import GithubButton from '@components/GithubButton';
+import SidePanel from '@components/SidePanel';
+import DarkModeToggle from '@components/DarkModeToggle';
+// import Menu from '@components/Menu';
+import { Fonts, webFonts } from '@lib/fonts';
+import { usePromise } from '@lib/hooks';
 import './Layout.css';
 
-const MENU_ITEMS = [
+/* const MENU_ITEMS = [
   {
     label: 'Posts',
     href: '/',
@@ -25,7 +25,7 @@ const MENU_ITEMS = [
     label: 'Books',
     href: '/books',
   },
-].map((item, id) => ({ ...item, id }));
+].map((item, id) => ({ ...item, id })); */
 
 const Layout = ({
   className,

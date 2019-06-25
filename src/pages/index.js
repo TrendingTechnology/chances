@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { get } from 'lodash';
 // import cx from 'classnames';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import PostExcerpt from '../components/PostExcerpt';
-import { formatReadingTime } from '../utils/helpers';
+import Layout from '@components/Layout';
+import SEO from '@components/SEO';
+import PostExcerpt from '@components/PostExcerpt';
+import { formatReadingTime } from '@lib/utils';
 import stripTags from 'striptags';
 
 const BlogIndex = ({ data = {}, location }) => {

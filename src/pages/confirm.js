@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { get } from 'lodash';
-import Layout from '../components/Layout';
+import Layout from '@components/Layout';
 
 const Confirm = ({ data = {}, location }) => {
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { get } from 'lodash';
-import Layout from '../components/Layout';
-import BookExcerpt from '../components/BookExcerpt';
-import SEO from '../components/SEO';
+import Layout from '@components/Layout';
+import BookExcerpt from '@components/BookExcerpt';
+import SEO from '@components/SEO';
 
 const BooksPage = ({ data = {}, location }) => {
   const books = get(data, 'allMarkdownRemark.edges');

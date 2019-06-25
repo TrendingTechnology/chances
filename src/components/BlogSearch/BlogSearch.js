@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
 import cx from 'classnames';
-import Input from '../Input';
+import Input from '@components/Input';
 
 const BlogSearch = ({ className, handleChange: changeProp }) => (
   <Formik

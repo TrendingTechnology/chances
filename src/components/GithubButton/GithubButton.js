@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import T from 'prop-types';
 import './GithubButton.css';
-import GithubIcon from '../GithubIcon';
+import GithubIcon from '@components/GithubIcon';
 
 const GithubButton = ({
   className,

@@ -1,16 +1,29 @@
 {
   "name": "chances",
-  "private": true,
-  "description": "Chances",
+  "description": "Chance Strickland's personal blog",
   "version": "1.0.0",
-  "author": "Chance Strickland <chance.strickland@gmail.com>",
+  "author": "Chance Strickland <hi@chancedigital.io> (https://chancedigital.io/)",
+  "private": true,
   "scripts": {
-    "dev": "gatsby develop -p 6060",
+    "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
     "start": "yarn dev",
+    "serve": "gatsby serve",
     "build": "rm -rf public && rm -rf .cache && gatsby build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chancestrickland/chances"
+  },
+  "bugs": {
+    "url": "https://github.com/chancestrickland/chances/issues"
+  },
+  "keywords": [
+    "gatsby",
+    "blog"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@loadable/webpack-plugin": "^5.7.1",
     "classnames": "^2.2.6",
@@ -86,11 +99,10 @@
     }
   },
   "browserslist": [
-    "> 3%",
-    "edge 17",
-    "not IE 11",
-    "safari 12",
-    "firefox 58"
+    "> 2%",
+    "not IE <=11",
+    "last 2 versions",
+    "firefox ESR"
   ],
   "husky": {
     "hooks": {
@@ -102,6 +114,5 @@
       "yarn format",
       "git add"
     ]
-  },
-  "license": "MIT"
+  }
 }

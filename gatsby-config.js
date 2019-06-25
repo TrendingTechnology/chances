@@ -59,7 +59,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-transition-link`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

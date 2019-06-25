@@ -114,6 +114,7 @@ const Layout = ({
                 className="Layout__burger"
                 onClick={toggleMenu}
                 isActive={menuIsActive}
+                label="Toggle additional controls"
               />
               <SidePanel
                 className="Layout__menuWrapper"

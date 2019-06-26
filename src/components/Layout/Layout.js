@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { uniq } from 'lodash';
 import cx from 'classnames';
 import { StaticQuery, graphql } from 'gatsby';
-import { ThemeContext } from '@providers/ThemeProvider';
+import { ThemeContext, FontContext } from '@providers';
 import HomeHeader from '@components/HomeHeader';
 import Burger from '@components/Burger'; /*  */
 import BlogHeader from '@components/BlogHeader';
@@ -12,8 +12,7 @@ import GithubButton from '@components/GithubButton';
 import SidePanel from '@components/SidePanel';
 import DarkModeToggle from '@components/DarkModeToggle';
 // import Menu from '@components/Menu';
-import { Fonts, webFonts } from '@lib/fonts';
-import { usePromise } from '@lib/hooks';
+import { webFonts } from '@lib/fonts';
 import './Layout.css';
 
 /* const MENU_ITEMS = [
@@ -41,9 +40,9 @@ const Layout = ({
   children,
   handleSearchChange,
 }) => {
-  const [fontsLoaded, fontError] = usePromise(Fonts(), []);
   const [menuIsActive, setMenuActiveState] = useState(false);
   const { darkMode } = useContext(ThemeContext);
+  const { fontsLoaded, fontError } = useContext(FontContext);
   const rootPath = `${__PATH_PREFIX__}/`; // eslint-disable-line
   const toggleMenu = () => setMenuActiveState(!menuIsActive);
   const renderFontLinks = () =>

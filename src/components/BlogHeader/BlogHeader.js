@@ -16,7 +16,7 @@ const BlogHeader = ({
 }) => {
   const [show, set] = useState(false);
   const transitions = useTransition(show, null, {
-    from: { position: 'absolute', opacity: 0 },
+    from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
   });

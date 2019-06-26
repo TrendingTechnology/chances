@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { uniqueId } from 'lodash';
 import cx from 'classnames';
 import Toggle from '@components/Toggle';
-import { ThemeContext } from '@providers/ThemeProvider';
+import { ThemeContext } from '@providers';
 import './DarkModeToggle.css';
 
 export const DarkModeToggle = ({ tabIndex, className }) => {

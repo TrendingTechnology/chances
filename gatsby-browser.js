@@ -1,8 +1,12 @@
 import React from 'react';
-import { ThemeProvider } from './src/providers/ThemeProvider';
 import 'what-input';
+import { ThemeProvider, FontProvider } from '@providers';
 import '@lib/theme.css';
 
-export const wrapRootElement = ({ element }) => (
-  <ThemeProvider>{element}</ThemeProvider>
-);
+export const wrapRootElement = ({ element }) => {
+  return (
+    <ThemeProvider>
+      <FontProvider>{element}</FontProvider>
+    </ThemeProvider>
+  );
+};

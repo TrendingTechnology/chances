@@ -36,7 +36,6 @@ const SEO = ({
   const defaultMeta = [
     { name: 'copyright', content: 'Chance Digital' },
     { name: 'description', content: metaDescription },
-    { name: 'og:type', content: 'website' },
     { property: 'og:site_name', content: siteMetadata.title },
     { property: 'og:title', content: title || siteMetadata.title },
     { property: 'og:description', content: metaDescription },

@@ -5,7 +5,7 @@ import { get } from 'lodash';
 import Layout from '@components/Layout';
 import SEO from '@components/SEO';
 import PostExcerpt from '@components/PostExcerpt';
-import { formatReadingTime } from '@lib/utils';
+import { formatReadingTime, unSlashIt } from '@lib/utils';
 import stripTags from 'striptags';
 
 const BlogIndex = ({ data = {}, location }) => {
@@ -18,6 +18,7 @@ const BlogIndex = ({ data = {}, location }) => {
   };
 
   const siteTitle = get(data, 'site.siteMetadata.title');
+  const description = get(data, 'site.siteMetadata.description');
   const posts = get(data, 'allMarkdownRemark.edges').filter(({ node }) => {
     const postTitle = get(node, 'frontmatter.title') || node.fields.slug || '';
     const postContent = get(node, 'html') || '';
@@ -39,7 +40,12 @@ const BlogIndex = ({ data = {}, location }) => {
       title={siteTitle}
       handleSearchChange={handleSearchChange}
     >
-      <SEO />
+      <SEO
+        description={description}
+        image={`${unSlashIt(location.href)}/headshot.jpg`}
+        title={siteTitle}
+        url={location.href}
+      />
       {posts.length > 0 ? (
         posts.map(({ node }) => {
           return (

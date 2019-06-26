@@ -9,7 +9,12 @@ const BooksPage = ({ data = {}, location }) => {
   const books = get(data, 'allMarkdownRemark.edges');
   return (
     <Layout location={location} title={get(data, 'site.siteMetadata.title')}>
-      <SEO />
+      <SEO
+        // description={post.frontmatter.spoiler}
+        // image={post.frontmatter.image}
+        // title={post.frontmatter.title}
+        url={location.href}
+      />
       {books.length > 0 ? (
         books.map(({ node }) => {
           return (

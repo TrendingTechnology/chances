@@ -35,10 +35,10 @@ const BlogPost = ({ data = {}, location, pageContext = {} }) => {
       className="BlogPost"
     >
       <SEO
-        lang="en"
-        title={post.frontmatter.title}
         description={post.frontmatter.spoiler}
-        slug={post.fields.slug}
+        image={post.frontmatter.image}
+        title={post.frontmatter.title}
+        url={location.href}
       />
       <article
         // eslint-disable-next-line react/no-danger

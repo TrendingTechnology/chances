@@ -3,9 +3,15 @@ import Helmet from 'react-helmet';
 import T from 'prop-types';
 import { get } from 'lodash';
 import { useStaticQuery, graphql } from 'gatsby';
-import { unSlashIt } from '@lib/utils';
 
-const SEO = ({ meta, image, title, description, slug, lang = 'en' }) => {
+const SEO = ({
+  description,
+  image,
+  lang = 'en',
+  meta = [],
+  title = '',
+  url,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query GetSiteMetadata {
@@ -25,9 +31,6 @@ const SEO = ({ meta, image, title, description, slug, lang = 'en' }) => {
   );
   const { siteMetadata } = site;
   const metaDescription = description || siteMetadata.description;
-  const url = slug
-    ? `${unSlashIt(siteMetadata.siteUrl)}/${unSlashIt(slug)}`
-    : siteMetadata.siteUrl || 'https://chances.tech';
 
   const defaultMeta = [
     { name: 'copyright', content: 'Chance Digital' },
@@ -37,7 +40,7 @@ const SEO = ({ meta, image, title, description, slug, lang = 'en' }) => {
     { property: 'og:title', content: title || siteMetadata.title },
     { property: 'og:description', content: metaDescription },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: url },
+    { property: 'og:url', content: url || siteMetadata.siteUrl },
     { property: 'og:image', content: image },
     { property: 'og:locale', content: 'en_US' },
     { name: 'twitter:title', content: title || siteMetadata.title },
@@ -59,18 +62,12 @@ const SEO = ({ meta, image, title, description, slug, lang = 'en' }) => {
   );
 };
 
-SEO.defaultProps = {
-  meta: [],
-  title: '',
-  slug: '',
-};
-
 SEO.propTypes = {
   description: T.string,
   image: T.string,
   meta: T.array,
-  slug: T.string,
   title: T.string.isRequired,
+  url: T.string,
 };
 
 export default SEO;

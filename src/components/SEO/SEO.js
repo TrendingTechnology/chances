@@ -10,7 +10,7 @@ const SEO = ({
   lang = 'en',
   meta = [],
   title = '',
-  url,
+  pathname = '/',
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -31,6 +31,7 @@ const SEO = ({
   );
   const { siteMetadata } = site;
   const metaDescription = description || siteMetadata.description;
+  const url = `${siteMetadata.siteUrl}${pathname}`;
 
   const defaultMeta = [
     { name: 'copyright', content: 'Chance Digital' },
@@ -40,7 +41,7 @@ const SEO = ({
     { property: 'og:title', content: title || siteMetadata.title },
     { property: 'og:description', content: metaDescription },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: url || siteMetadata.siteUrl },
+    { property: 'og:url', content: url },
     { property: 'og:image', content: image },
     { property: 'og:locale', content: 'en_US' },
     { name: 'twitter:title', content: title || siteMetadata.title },

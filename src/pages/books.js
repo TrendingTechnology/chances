@@ -10,10 +10,10 @@ const BooksPage = ({ data = {}, location }) => {
   return (
     <Layout location={location} title={get(data, 'site.siteMetadata.title')}>
       <SEO
-        // description={post.frontmatter.spoiler}
-        // image={post.frontmatter.image}
-        // title={post.frontmatter.title}
-        url={location.href}
+      // description={post.frontmatter.spoiler}
+      // image={post.frontmatter.image}
+      // title={post.frontmatter.title}
+      //pathname={location.pathname}
       />
       {books.length > 0 ? (
         books.map(({ node }) => {

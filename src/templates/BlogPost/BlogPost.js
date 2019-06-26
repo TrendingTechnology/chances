@@ -38,7 +38,7 @@ const BlogPost = ({ data = {}, location, pageContext = {} }) => {
         description={post.frontmatter.spoiler}
         image={post.frontmatter.image}
         title={post.frontmatter.title}
-        url={location.href}
+        pathname={location.pathname}
       />
       <article
         // eslint-disable-next-line react/no-danger

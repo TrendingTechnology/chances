@@ -42,9 +42,11 @@ const BlogIndex = ({ data = {}, location }) => {
     >
       <SEO
         description={description}
-        image={`${unSlashIt(location.href)}/headshot.jpg`}
+        image={`${unSlashIt(
+          location.href || 'https://chances.tech'
+        )}/headshot.jpg`}
         title={siteTitle}
-        url={location.href}
+        pathname="/"
       />
       {posts.length > 0 ? (
         posts.map(({ node }) => {
